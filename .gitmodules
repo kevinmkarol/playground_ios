@@ -1,0 +1,3 @@
+[submodule "google-api-objectivec-client"]
+	path = google-api-objectivec-client
+	url = https://github.com/google/google-api-objectivec-client.git
