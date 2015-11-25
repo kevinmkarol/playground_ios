@@ -1,0 +1,454 @@
+{
+    "assets": [
+        {
+            "asset": "../../Desktop/playgroundAssets/p58.png", 
+            "target": "p58.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/iPadLand.png", 
+            "target": "iPadLand.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/floor3@2x.png", 
+            "target": "floor3@2x.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/iPadPort.png", 
+            "target": "iPadPort.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/p80.png", 
+            "target": "p80.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/credits.png", 
+            "target": "credits.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/p40.png", 
+            "target": "p40.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/installation.png", 
+            "target": "installation.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/iPhonePort4.png", 
+            "target": "iPhonePort4.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/p29.png", 
+            "target": "p29.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/p152.png", 
+            "target": "p152.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/floor1.png", 
+            "target": "floor1.png"
+        }, 
+        {
+            "asset": "Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/ipadMap.png", 
+            "target": "ipadMap.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/floor2.png", 
+            "target": "floor2.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/home.png", 
+            "target": "home.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/floor3.png", 
+            "target": "floor3.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/iPadLand@2x.png", 
+            "target": "iPadLand@2x.png"
+        }, 
+        {
+            "asset": "playground2014/Images.xcassets/first.imageset/first.png", 
+            "target": "first.png"
+        }, 
+        {
+            "asset": "playground2014/Images.xcassets/first.imageset/first@2x.png", 
+            "target": "first@2x.png"
+        }, 
+        {
+            "asset": "playground2014/Images.xcassets/second.imageset/second.png", 
+            "target": "second.png"
+        }, 
+        {
+            "asset": "playground2014/Images.xcassets/second.imageset/second@2x.png", 
+            "target": "second@2x.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/iPadPort@2x.png", 
+            "target": "iPadPort@2x.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/p120.png", 
+            "target": "p120.png"
+        }, 
+        {
+            "asset": "playground2014/en.lproj/InfoPlist.strings", 
+            "target": "en.lproj/InfoPlist.strings"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/p76.png", 
+            "target": "p76.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/floor2@2x.png", 
+            "target": "floor2@2x.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/floor1@2x.png", 
+            "target": "floor1@2x.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/iPhonePort.png", 
+            "target": "iPhonePort.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/Face30.png", 
+            "target": "Face30.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/Header.png", 
+            "target": "Header.png"
+        }, 
+        {
+            "asset": "../../Desktop/playgroundAssets/ipadMap@2x.png", 
+            "target": "ipadMap@2x.png"
+        }
+    ], 
+    "config": {
+        "APPLICATION_FULL_NAME": "playground2014", 
+        "APPLICATION_IDENTIFIER": "com.kkarol.playground2014", 
+        "APPLICATION_NAME": "playground2014", 
+        "FEATURES": [
+            "landscape"
+        ], 
+        "ICU_CONFIG": "normal", 
+        "LONG_VERSION": "1.0", 
+        "SHORT_VERSION": "1.0", 
+        "TEMPLATE_VALUES": {
+            "EXECUTABLE_NAME": "playground2014", 
+            "PRODUCT_NAME": "playground2014"
+        }
+    }, 
+    "defines": {
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 70000
+    }, 
+    "deps": [
+        "UIKit", 
+        "iAd", 
+        "CoreGraphics", 
+        "UIKit", 
+        "Foundation"
+    ], 
+    "flags": [
+        "-fobjc-arc", 
+        "-fasm-blocks", 
+        {
+            "flag": "-std=gnu99", 
+            "not_type": "c++"
+        }, 
+        {
+            "flag": "-fgnu-keywords", 
+            "not_type": "c++"
+        }, 
+        "-fno-asm", 
+        "-fpascal-strings", 
+        "-Wempty-body", 
+        "-Wshorten-64-to-32", 
+        "-Wno-deprecated-declarations", 
+        "-Wswitch", 
+        "-Wparentheses", 
+        "-Wformat", 
+        "-Wuninitialized", 
+        "-Wunused-function", 
+        "-Wunused-value", 
+        "-Wunused-variable", 
+        {
+            "flag": "-Winvalid-offsetof", 
+            "type": "c++"
+        }, 
+        {
+            "flag": "-Wprotocol", 
+            "type": "objc"
+        }, 
+        {
+            "flag": "-Wundeclared-selector", 
+            "type": "objc"
+        }
+    ], 
+    "header_paths": [
+        {
+            "header_path": "playground2014-generated-files.hmap", 
+            "hmap": {}, 
+            "type": "iquote"
+        }, 
+        {
+            "header_path": "playground2014-own-target-headers.hmap", 
+            "hmap": {}, 
+            "type": "I"
+        }, 
+        {
+            "header_path": "playground2014-all-target-headers.hmap", 
+            "hmap": {}, 
+            "type": "I"
+        }, 
+        {
+            "header_path": "playground2014-project-headers.hmap", 
+            "hmap": {
+                "AppDelegate.h": {
+                    "key": "AppDelegate.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "AppDelegate.h"
+                }, 
+                "FirstViewController.h": {
+                    "key": "FirstViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "FirstViewController.h"
+                }, 
+                "InstallationMapViewController.h": {
+                    "key": "InstallationMapViewController.h", 
+                    "prefix": "./", 
+                    "suffix": "InstallationMapViewController.h"
+                }, 
+                "InstallationTableViewController.h": {
+                    "key": "InstallationTableViewController.h", 
+                    "prefix": "./", 
+                    "suffix": "InstallationTableViewController.h"
+                }, 
+                "Reachability.h": {
+                    "key": "Reachability.h", 
+                    "prefix": "../Reachability/Reachability/", 
+                    "suffix": "Reachability.h"
+                }, 
+                "SecondViewController.h": {
+                    "key": "SecondViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "SecondViewController.h"
+                }, 
+                "ShowInfo.h": {
+                    "key": "ShowInfo.h", 
+                    "prefix": "../fixedPlayground/", 
+                    "suffix": "ShowInfo.h"
+                }, 
+                "Util.h": {
+                    "key": "Util.h", 
+                    "prefix": "./", 
+                    "suffix": "Util.h"
+                }, 
+                "helpers.h": {
+                    "key": "helpers.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "helpers.h"
+                }, 
+                "iPad_Description_ViewController.h": {
+                    "key": "iPad_Description_ViewController.h", 
+                    "prefix": "./", 
+                    "suffix": "iPad_Description_ViewController.h"
+                }, 
+                "iPad_Shows_ViewController.h": {
+                    "key": "iPad_Shows_ViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "iPad_Shows_ViewController.h"
+                }, 
+                "iPhone_Description_ViewController.h": {
+                    "key": "iPhone_Description_ViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "iPhone_Description_ViewController.h"
+                }, 
+                "masterTable_iPhone.h": {
+                    "key": "masterTable_iPhone.h", 
+                    "prefix": "./", 
+                    "suffix": "masterTable_iPhone.h"
+                }, 
+                "playground2014-Prefix.pch": {
+                    "key": "playground2014-Prefix.pch", 
+                    "prefix": "playground2014/", 
+                    "suffix": "playground2014-Prefix.pch"
+                }, 
+                "showListIpad.h": {
+                    "key": "showListIpad.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "showListIpad.h"
+                }, 
+                "showListingsViewController.h": {
+                    "key": "showListingsViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "showListingsViewController.h"
+                }
+            }, 
+            "type": "iquote"
+        }, 
+        {
+            "header_path": "/var/folders/jn/37yxw5qj44bgfkl_1j1kr_9c0000gn/T/tmp630vZU/BUILT_PRODUCTS_DIR/include", 
+            "type": "I"
+        }, 
+        {
+            "header_path": "/Users/Kevin/developer/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include", 
+            "type": "I"
+        }, 
+        {
+            "header_path": "/var/folders/jn/37yxw5qj44bgfkl_1j1kr_9c0000gn/T/tmp630vZU/DERIVED_FILE_DIR/armv7", 
+            "type": "I"
+        }, 
+        {
+            "header_path": "/var/folders/jn/37yxw5qj44bgfkl_1j1kr_9c0000gn/T/tmp630vZU/DERIVED_FILE_DIR", 
+            "type": "I"
+        }
+    ], 
+    "infoplists": [
+        "./playground2014/playground2014-Info.plist"
+    ], 
+    "java_libs": [], 
+    "java_res_dirs": [], 
+    "java_sourcepaths": [], 
+    "java_sources": [], 
+    "libs": [], 
+    "link_flags": [], 
+    "modules": [], 
+    "pchs": [
+        "./playground2014/playground2014-Prefix.pch"
+    ], 
+    "sources": [
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "../Reachability/Reachability/Reachability.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "../fixedPlayground/ShowInfo.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "InstallationMapViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "InstallationTableViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "Util.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "iPad_Description_ViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "masterTable_iPhone.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/AppDelegate.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/FirstViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/SecondViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/helpers.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/iPad_Shows_ViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/iPhone_Description_ViewController.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/main.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/showListIpad.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014/showListingsViewController.m"
+        }
+    ], 
+    "storyboards": [
+        {
+            "storyboard": "playground2014/Base.lproj/Main_iPad.storyboard", 
+            "target": null
+        }, 
+        {
+            "storyboard": "playground2014/en.lproj/Main_iPhone.storyboard", 
+            "target": null
+        }
+    ], 
+    "type": "app", 
+    "version": "3", 
+    "xcdatamodels": [], 
+    "xcode_project": "playground2014.xcodeproj", 
+    "xibs": []
+}

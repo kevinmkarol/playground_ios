@@ -1,0 +1,191 @@
+{
+    "assets": [
+        {
+            "asset": "playground2014Tests/en.lproj/InfoPlist.strings", 
+            "target": "en.lproj/InfoPlist.strings"
+        }
+    ], 
+    "config": {
+        "APPLICATION_IDENTIFIER": "kkarol.playground2014Tests", 
+        "LONG_VERSION": "1", 
+        "SHORT_VERSION": "1.0", 
+        "TEMPLATE_VALUES": {
+            "EXECUTABLE_NAME": "playground2014Tests", 
+            "PRODUCT_NAME": "playground2014Tests"
+        }
+    }, 
+    "defines": {
+        "NS_BLOCK_ASSERTIONS": 1, 
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 70000
+    }, 
+    "deps": [
+        "UIKit", 
+        "iAd", 
+        "CoreGraphics", 
+        "UIKit", 
+        "Foundation", 
+        "XCTest", 
+        "XCTest", 
+        "UIKit", 
+        "Foundation"
+    ], 
+    "flags": [
+        "-fobjc-arc", 
+        "-fasm-blocks", 
+        {
+            "flag": "-std=gnu99", 
+            "not_type": "c++"
+        }, 
+        {
+            "flag": "-fgnu-keywords", 
+            "not_type": "c++"
+        }, 
+        "-fno-asm", 
+        "-fpascal-strings", 
+        "-Wempty-body", 
+        "-Wshorten-64-to-32", 
+        "-Wno-deprecated-declarations", 
+        "-Wswitch", 
+        "-Wparentheses", 
+        "-Wformat", 
+        "-Wuninitialized", 
+        "-Wunused-function", 
+        "-Wunused-value", 
+        "-Wunused-variable", 
+        {
+            "flag": "-Winvalid-offsetof", 
+            "type": "c++"
+        }, 
+        {
+            "flag": "-Wprotocol", 
+            "type": "objc"
+        }, 
+        {
+            "flag": "-Wundeclared-selector", 
+            "type": "objc"
+        }
+    ], 
+    "header_paths": [
+        {
+            "header_path": "playground2014Tests-generated-files.hmap", 
+            "hmap": {}, 
+            "type": "iquote"
+        }, 
+        {
+            "header_path": "playground2014Tests-own-target-headers.hmap", 
+            "hmap": {}, 
+            "type": "I"
+        }, 
+        {
+            "header_path": "playground2014Tests-all-target-headers.hmap", 
+            "hmap": {}, 
+            "type": "I"
+        }, 
+        {
+            "header_path": "playground2014Tests-project-headers.hmap", 
+            "hmap": {
+                "AppDelegate.h": {
+                    "key": "AppDelegate.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "AppDelegate.h"
+                }, 
+                "FirstViewController.h": {
+                    "key": "FirstViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "FirstViewController.h"
+                }, 
+                "InstallationMapViewController.h": {
+                    "key": "InstallationMapViewController.h", 
+                    "prefix": "./", 
+                    "suffix": "InstallationMapViewController.h"
+                }, 
+                "InstallationTableViewController.h": {
+                    "key": "InstallationTableViewController.h", 
+                    "prefix": "./", 
+                    "suffix": "InstallationTableViewController.h"
+                }, 
+                "Reachability.h": {
+                    "key": "Reachability.h", 
+                    "prefix": "../Reachability/Reachability/", 
+                    "suffix": "Reachability.h"
+                }, 
+                "SecondViewController.h": {
+                    "key": "SecondViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "SecondViewController.h"
+                }, 
+                "ShowInfo.h": {
+                    "key": "ShowInfo.h", 
+                    "prefix": "../fixedPlayground/", 
+                    "suffix": "ShowInfo.h"
+                }, 
+                "Util.h": {
+                    "key": "Util.h", 
+                    "prefix": "./", 
+                    "suffix": "Util.h"
+                }, 
+                "helpers.h": {
+                    "key": "helpers.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "helpers.h"
+                }, 
+                "iPad_Description_ViewController.h": {
+                    "key": "iPad_Description_ViewController.h", 
+                    "prefix": "./", 
+                    "suffix": "iPad_Description_ViewController.h"
+                }, 
+                "iPad_Shows_ViewController.h": {
+                    "key": "iPad_Shows_ViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "iPad_Shows_ViewController.h"
+                }, 
+                "iPhone_Description_ViewController.h": {
+                    "key": "iPhone_Description_ViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "iPhone_Description_ViewController.h"
+                }, 
+                "masterTable_iPhone.h": {
+                    "key": "masterTable_iPhone.h", 
+                    "prefix": "./", 
+                    "suffix": "masterTable_iPhone.h"
+                }, 
+                "playground2014-Prefix.pch": {
+                    "key": "playground2014-Prefix.pch", 
+                    "prefix": "playground2014/", 
+                    "suffix": "playground2014-Prefix.pch"
+                }, 
+                "showListIpad.h": {
+                    "key": "showListIpad.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "showListIpad.h"
+                }, 
+                "showListingsViewController.h": {
+                    "key": "showListingsViewController.h", 
+                    "prefix": "playground2014/", 
+                    "suffix": "showListingsViewController.h"
+                }
+            }, 
+            "type": "iquote"
+        }
+    ], 
+    "infoplists": [
+        "./playground2014Tests/playground2014Tests-Info.plist"
+    ], 
+    "libs": [], 
+    "modules": [], 
+    "pchs": [
+        "./playground2014/playground2014-Prefix.pch"
+    ], 
+    "sources": [
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "playground2014Tests/playground2014Tests.m"
+        }
+    ], 
+    "type": "com.apple.product-type.bundle.unit-test", 
+    "version": "1", 
+    "xcode_project": "playground2014.xcodeproj"
+}
