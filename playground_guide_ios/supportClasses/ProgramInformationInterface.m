@@ -11,6 +11,7 @@
 #import "InstallationImage.h"
 #import "CreditInfo.h"
 #import "InstallationInfo.h"
+#import "BreakInfo.h"
 
 @implementation ProgramInformationInterface
 
@@ -39,8 +40,32 @@
    return sharedProgramInformation;
 }
 
+-(bool)hasBeenOneDaySinceUpdate{
+  NSFileManager* fm = [NSFileManager defaultManager];
+  NSString* filePath = [self pathToFile:LAST_UPDATE_FILE_NAME];
 
--(NSString*)pathToJSONFile:(NSString*)fileName
+
+  BOOL fileExists = [fm fileExistsAtPath:filePath];
+  
+  if(fileExists){
+    NSData* rawFile = [NSData dataWithContentsOfFile:filePath];
+    NSArray* savedInfo =  [NSKeyedUnarchiver unarchiveObjectWithData:rawFile];
+    NSDate* nextUpdate = savedInfo[0];
+    return ([nextUpdate compare:[NSDate date]] == NSOrderedAscending);
+  }
+  
+  return true;
+}
+
+-(bool)isProgramInfoReady{
+  if([self getProgramInformation:THURSDAY_FILE_NAME] != nil){
+    return true;
+  }
+  
+  return false;
+}
+
+-(NSString*)pathToFile:(NSString*)fileName
 {
   NSFileManager* fm = [NSFileManager defaultManager];
   NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
@@ -63,41 +88,38 @@
 -(void)saveProgramInformation:(NSString*)fileName programInformation:(NSMutableArray*)programInformation
 {
   NSFileManager* fm = [NSFileManager defaultManager];
-  NSString* filePath = [self pathToJSONFile:fileName];
+  NSString* filePath = [self pathToFile:fileName];
 
   NSData* fileData =  [NSKeyedArchiver archivedDataWithRootObject:programInformation];
   [fm createFileAtPath:filePath contents:fileData attributes:nil];
   
-  
   //Keep the in-memory cache up to date
   if([fileName isEqualToString:VERSION_FILE_NAME]){
-    _version = programInformation;
+    _version = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: INSTALLATION_FILE_NAME]){
-    _installations = programInformation;
+    _installations = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: INSTALLATION_IMAGES_FILE_NAME]){
-    _installationImages = programInformation;
+    _installationImages = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: FESTIVAL_STAFF_FILE_NAME]){
-    _festivalStaff = programInformation;
+    _festivalStaff = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: SPECIAL_THANKS_FILE_NAME]){
-    _specialThanks = programInformation;
+    _specialThanks = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: THURSDAY_FILE_NAME]){
-    _thursday = programInformation;
+    _thursday = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: FRIDAY_FILE_NAME]){
-    _friday = programInformation;
+    _friday = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: SATURDAY_FILE_NAME]){
-    _saturday = programInformation;
+    _saturday = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }
-
 }
 
 
 -(NSArray*)getProgramInformation:(NSString*)fileName
 {
-  NSString* filePath = [self pathToJSONFile:fileName];
-  NSError* err;
+  NSString* filePath = [self pathToFile:fileName];
 
   NSArray* fileContents;
-  NSArray* cachedArray;
+  /**NSArray* cachedArray = nil;
 
   if([fileName isEqualToString:VERSION_FILE_NAME]){
     cachedArray = _version;
@@ -120,13 +142,13 @@
   }
   
   if(cachedArray != nil){
-    fileContents = _version;
-  }else{
+    fileContents = cachedArray;
+  }else{**/
     NSData* rawFile = [NSData dataWithContentsOfFile:filePath];
     NSArray* savedInfo =  [NSKeyedUnarchiver unarchiveObjectWithData:rawFile];
-    cachedArray = savedInfo;
+    //cachedArray = savedInfo;
     fileContents = savedInfo;
-  }
+  //}
   
   return fileContents;
 }
@@ -155,8 +177,13 @@
     NSArray* fields = [line componentsSeparatedByString:@","];
     
     //Save data to files when see row with special heading
-    if([fields[0] isEqualToString:@"Installation Images"]){
+    if([fields[0] isEqualToString:@"Festival Dates"]){
+      currentInfo = FESTIVAL_DATES;
+      continue;
+    }else if([fields[0] isEqualToString:@"Installation Images"]){
       currentInfo = INSTALLATION_IMAGES;
+      [self saveProgramInformation:FESTIVAL_DATES_FILE_NAME programInformation:cumulativeData];
+      [cumulativeData removeAllObjects];
       continue;
     }else if([fields[0] isEqualToString:@"Festival Staff"]){
       currentInfo = CREDITS_FESTIVAL_STAFF;
@@ -188,8 +215,13 @@
       [self saveProgramInformation:SATURDAY_FILE_NAME programInformation:cumulativeData];
       [cumulativeData removeAllObjects];
       continue;
-    }else if([fields[0] isEqualToString:@"End"]){
+    }else if([fields[0] isEqualToString:@"Breaks"]){
+      currentInfo = BREAKS;
       [self saveProgramInformation:INSTALLATION_FILE_NAME programInformation:cumulativeData];
+      [cumulativeData removeAllObjects];
+      continue;
+    }else if([fields[0] isEqualToString:@"End"]){
+      [self saveProgramInformation:BREAKS_FILE_NAME programInformation:cumulativeData];
       [cumulativeData removeAllObjects];
       continue;
     }
@@ -199,11 +231,21 @@
        case VERSION:
          break;
          
+       case FESTIVAL_DATES:{
+        NSDate* thursday = [dateFormatter dateFromString:fields[1]];
+        NSDate* friday = [dateFormatter dateFromString:fields[2]];
+        NSDate* saturday = [dateFormatter dateFromString:fields[3]];
+        
+        [cumulativeData addObject:thursday];
+        [cumulativeData addObject:friday];
+        [cumulativeData addObject:saturday];
+        break;
+       }
        case INSTALLATION_IMAGES:{
         InstallationImage* currentImage = [[InstallationImage alloc] init];
         [currentImage setImageName:fields[1]];
         NSURL* url = [[NSURL alloc] initWithString: fields[2]];
-        [currentImage setImageURL:url];
+        [currentImage setWebURL:url];
         [cumulativeData addObject:currentImage];
          break;
        }
@@ -257,10 +299,30 @@
 
          [cumulativeData addObject:currentShow];
          break;
+       }
+       case BREAKS:{
+         BreakInfo* currentBreak = [[BreakInfo alloc] init];
+         [currentBreak setDate:[dateFormatter dateFromString:fields[1]]];
+         
+         [cumulativeData addObject:currentBreak];
          break;
        }
     }
   }
+  
+  //Update the last time file info was downloaded
+  NSCalendar *cal = [NSCalendar currentCalendar];
+  NSDate *tomorrow = [cal dateByAddingUnit:NSCalendarUnitDay
+                                   value:1 
+                                  toDate:[NSDate date] 
+                                 options:0];
+  
+  NSFileManager* fm = [NSFileManager defaultManager];
+  NSString* filePath = [self pathToFile:LAST_UPDATE_FILE_NAME];
+  NSData* fileData =  [NSKeyedArchiver archivedDataWithRootObject:@[tomorrow]];
+  [fm createFileAtPath:filePath contents:fileData attributes:nil];
+
+
 }
 
 

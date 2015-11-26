@@ -9,6 +9,7 @@
 #import "showListIpad.h"
 #import "ShowInfo.h"
 #import "Util.h"
+#import "ProgramInformationInterface.h"
 
 @implementation showListIpad
 
@@ -36,10 +37,10 @@
 - (void)viewDidLoad
 {
 	// Do any additional setup after loading the view.
-    NSMutableArray *thursdayShows = [[NSMutableArray alloc] initWithArray:[Util arrayContentsOfFile:@"thursday.plist"]];
-    NSMutableArray *fridayShows = [[NSMutableArray alloc] initWithArray:[Util arrayContentsOfFile:@"friday.plist"]];
-    NSMutableArray *saturdayShows = [[NSMutableArray alloc] initWithArray:[Util arrayContentsOfFile:@"saturday.plist"]];
-    NSMutableArray *installationShows = [[NSMutableArray alloc] initWithArray:[Util arrayContentsOfFile:@"installation.plist"]];
+    NSMutableArray *thursdayShows = [[ProgramInformationInterface sharedManager] getProgramInformation:THURSDAY_FILE_NAME];
+    NSMutableArray *fridayShows = [[ProgramInformationInterface sharedManager] getProgramInformation:FRIDAY_FILE_NAME];
+    NSMutableArray *saturdayShows = [[ProgramInformationInterface sharedManager] getProgramInformation:SATURDAY_FILE_NAME];
+    NSMutableArray *installationShows = [[ProgramInformationInterface sharedManager] getProgramInformation:INSTALLATION_FILE_NAME];;
     
     ShowInfo *show;
     
@@ -115,19 +116,19 @@
     //specify by section
     if(section == 0) {
         
-        NSArray *thursday = [Util arrayContentsOfFile:@"thursday.plist"];
+        NSArray *thursday = [[ProgramInformationInterface sharedManager] getProgramInformation:THURSDAY_FILE_NAME];
         return [thursday count];
     }
     else if (section == 1){
-        NSArray *friday = [Util arrayContentsOfFile:@"friday.plist"];
+        NSArray *friday = [[ProgramInformationInterface sharedManager] getProgramInformation:FRIDAY_FILE_NAME];
         return [friday count];
     }
     else if (section == 2){
-        NSArray *saturday = [Util arrayContentsOfFile:@"saturday.plist"];
+        NSArray *saturday = [[ProgramInformationInterface sharedManager] getProgramInformation:SATURDAY_FILE_NAME];
         return [saturday count];
     }
     else{
-        NSArray *installation = [Util arrayContentsOfFile:@"installation.plist"];
+        NSArray *installation = [[ProgramInformationInterface sharedManager] getProgramInformation:INSTALLATION_FILE_NAME];
         return [installation count];
     }
     

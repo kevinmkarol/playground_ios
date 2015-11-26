@@ -13,7 +13,7 @@
 @interface showListingsViewController : UITableViewController
 
 @property (weak,nonatomic) NSString *plistSelector;
-@property (retain, nonatomic) NSMutableArray *showArray;
+@property (retain, nonatomic) NSArray *showArray;
 
 
 @end

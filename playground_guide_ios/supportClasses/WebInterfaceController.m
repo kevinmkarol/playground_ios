@@ -30,10 +30,6 @@
    return sharedWebInterface;
 }
 
-
-
-
-
 -(void)fetchNewProgramInformation
 {
   GTLServiceDrive *drive = [[GTLServiceDrive alloc] init];

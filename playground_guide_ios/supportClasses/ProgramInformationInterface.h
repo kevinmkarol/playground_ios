@@ -8,27 +8,32 @@
 
 @import Foundation;
 
-#define VERSION_FILE_NAME @"version.json"
-#define INSTALLATION_FILE_NAME @"installations.json"
-#define INSTALLATION_IMAGES_FILE_NAME @"installationImages.json"
-#define FESTIVAL_STAFF_FILE_NAME @"festivalStaff.json"
-#define SPECIAL_THANKS_FILE_NAME @"thanks.json"
-#define THURSDAY_FILE_NAME @"thursday.json"
-#define FRIDAY_FILE_NAME @"friday.json"
-#define SATURDAY_FILE_NAME @"saturday.json"
+#define VERSION_FILE_NAME @"version"
+#define FESTIVAL_DATES_FILE_NAME @"dates"
+#define INSTALLATION_FILE_NAME @"installations"
+#define INSTALLATION_IMAGES_FILE_NAME @"installationImages"
+#define FESTIVAL_STAFF_FILE_NAME @"festivalStaff"
+#define SPECIAL_THANKS_FILE_NAME @"thanks"
+#define THURSDAY_FILE_NAME @"thursday"
+#define FRIDAY_FILE_NAME @"friday"
+#define SATURDAY_FILE_NAME @"saturday"
+#define BREAKS_FILE_NAME @"breaks"
+#define LAST_UPDATE_FILE_NAME @"lastUpdate"
 
 
 @interface ProgramInformationInterface : NSObject
 
 typedef NS_ENUM(NSInteger, ProgramInformationType){
   VERSION,
+  FESTIVAL_DATES,
   INSTALLATION_IMAGES,
   CREDITS_FESTIVAL_STAFF,
   CREDITS_SPECIAL_THANKS,
   SHOW_INFO_THURSDAY,
   SHOW_INFO_FRIDAY,
   SHOW_INFO_SATURDAY,
-  SHOW_INFO_INSTALLATION
+  SHOW_INFO_INSTALLATION,
+  BREAKS
 };
 
 
@@ -44,6 +49,11 @@ typedef NS_ENUM(NSInteger, ProgramInformationType){
 
 +(id)sharedManager;
 
+//Checks to see whether the last program information update was more than a day ago
+-(bool)hasBeenOneDaySinceUpdate;
+
+//Checks to see if this class will return proper information when queried
+-(bool)isProgramInfoReady;
 
 //Parses CSV data into NSDictionaries
 //NOTE: If the structure of the Sheets document changes, this function will
@@ -54,7 +64,7 @@ typedef NS_ENUM(NSInteger, ProgramInformationType){
 -(void)saveProgramInformation:(NSString*)fileName programInformation:(NSMutableArray*)programInformation;
 
 //Returns the full file path for a fileName
--(NSString*)pathToJSONFile:(NSString*)fileName;
+-(NSString*)pathToFile:(NSString*)fileName;
 
 //Returns an array of the data stored in the fileName
 -(NSArray*)getProgramInformation:(NSString*)fileName;

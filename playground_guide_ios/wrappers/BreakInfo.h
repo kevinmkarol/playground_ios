@@ -1,5 +1,5 @@
 //
-//  InstallationImage.h
+//  BreakInfo.h
 //  playground_guide_ios
 //
 //  Created by Kevin Karol on 11/25/15.
@@ -8,14 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface InstallationImage : NSObject<NSCoding>
+@interface BreakInfo : NSObject<NSCoding>
 
-@property (nonatomic, strong) NSString* imageName;
-@property (nonatomic, strong) NSURL* webURL;
-@property (nonatomic, strong) NSURL* localURL;
+@property (nonatomic, strong) NSDate* date;
 
 - (void)encodeWithCoder:(NSCoder *)aCoder;
 -(id)initWithCoder:(NSCoder *)aDecoder;
 
 @end
-

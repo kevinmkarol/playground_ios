@@ -8,16 +8,13 @@
 
 #import "showListingsViewController.h"
 #import "Util.h"
+#import "ProgramInformationInterface.h"
 
 @interface showListingsViewController ()
 
 @end
 
 @implementation showListingsViewController
-
-@synthesize plistSelector, showArray;
-
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,40 +28,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray *listOfShows;
     
-    
-    if([plistSelector isEqualToString: @"thursday"]){
-        listOfShows = [Util arrayContentsOfFile:@"thursday.plist"];
+    if([_plistSelector isEqualToString: @"thursday"]){
+        _showArray = [[ProgramInformationInterface sharedManager] getProgramInformation:THURSDAY_FILE_NAME];
     }
-    else if([plistSelector isEqualToString: @"friday"]){
-        listOfShows = [Util arrayContentsOfFile:@"friday.plist"];
+    else if([_plistSelector isEqualToString: @"friday"]){
+        _showArray = [[ProgramInformationInterface sharedManager] getProgramInformation:FRIDAY_FILE_NAME];
     }
-    else if([plistSelector isEqualToString: @"saturday"]){
-        listOfShows = [Util arrayContentsOfFile:@"saturday.plist"];
+    else if([_plistSelector isEqualToString: @"saturday"]){
+        _showArray = [[ProgramInformationInterface sharedManager] getProgramInformation:SATURDAY_FILE_NAME];
     }
-    else if([plistSelector isEqualToString:@"installation"]){
-        listOfShows = [Util arrayContentsOfFile:@"installation.plist"];
+    else if([_plistSelector isEqualToString:@"installation"]){
+        _showArray = [[ProgramInformationInterface sharedManager] getProgramInformation:INSTALLATION_FILE_NAME];
     }
     else{
         //initialize list of shows to be pulled from myList - sorting here?
     }
     
-    ShowInfo *show;
-    showArray = [[NSMutableArray alloc] init];
-    
-    for(NSMutableDictionary *temporary in listOfShows){
-        show = [[ShowInfo alloc] init];
-        [show setTitle: [temporary objectForKey: @"title"]];
-        [show setShowCreator: [temporary objectForKey:@"showCreator"]];
-        [show setProgramNote: [temporary objectForKey:@"description"]];
-        [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
-        [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        //[show setTime: [temporary objectForKey:@"time"]];
-        [show setLocation:[temporary objectForKey:@"location"]];
-        [showArray addObject: show];
-
-    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -90,7 +70,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [showArray count];
+    return [_showArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,10 +79,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    ShowInfo *current = [showArray objectAtIndex:indexPath.row];
+    ShowInfo *current = [_showArray objectAtIndex:indexPath.row];
     cell.textLabel.text =  [current title];
     
-    if([plistSelector isEqualToString: @"installation"]){
+    if([_plistSelector isEqualToString: @"installation"]){
         NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@",[current location]];
         cell.detailTextLabel.text = subtitle;
     }
@@ -159,7 +139,7 @@
 {
     iPhone_Description_ViewController *dvc = [segue destinationViewController];
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-    ShowInfo *c = [showArray objectAtIndex: path.row];
+    ShowInfo *c = [_showArray objectAtIndex: path.row];
     [dvc setCurrentShow:c];
     
 }

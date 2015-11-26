@@ -10,10 +10,10 @@
 #import "Util.h"
 #import "FirstViewController.h"
 #import "SecondViewController.h"
-#import "Reachability.h"
 #import "iPad_Shows_ViewController.h"
 #import "iPad_Description_ViewController.h"
 #import "WebInterfaceController.h"
+#import "ProgramInformationInterface.h"
 
 @implementation AppDelegate
 
@@ -21,21 +21,9 @@
 {
 
     // Override point for customization after application launch.
-    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentFolder = [path objectAtIndex:0];
-    NSString *filePath = [documentFolder stringByAppendingPathComponent:@"update.plist"];
-
-    NSTimeInterval oneDay = -86400;
-    NSDate *today = [NSDate date];
-    NSDate *yesterday = [NSDate dateWithTimeInterval:oneDay sinceDate:today];
-    NSArray *oneEntry = [NSArray arrayWithObject:yesterday];
-    [oneEntry writeToFile:filePath atomically:YES];
-    
-    
-    //Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    //NetworkStatus internetStatus = [reachability currentReachabilityStatus];
-    
-    [[WebInterfaceController sharedManager] fetchNewProgramInformation];
+    if([[ProgramInformationInterface sharedManager] hasBeenOneDaySinceUpdate]){
+      [[WebInterfaceController sharedManager] fetchNewProgramInformation];
+    }
     
     return YES;
 }
@@ -55,10 +43,9 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
-    
-    //[FirstViewController updateHome];
+    if([[ProgramInformationInterface sharedManager] hasBeenOneDaySinceUpdate]){
+      [[WebInterfaceController sharedManager] fetchNewProgramInformation];
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

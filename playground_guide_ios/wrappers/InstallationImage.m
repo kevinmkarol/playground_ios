@@ -13,7 +13,9 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
   [aCoder encodeObject:self.imageName forKey:@"IMAGE_NAME"];
-  [aCoder encodeObject:self.imageURL forKey:@"IMAGE_URL"];
+  [aCoder encodeObject:self.webURL forKey:@"WEB_URL"];
+  [aCoder encodeObject:self.localURL forKey:@"LOCAL_URL"];
+
 
 }
 
@@ -21,7 +23,8 @@
 {
   if(self = [super init]){
     self.imageName = [aDecoder decodeObjectForKey:@"IMAGE_NAME"];
-    self.imageURL = [aDecoder decodeObjectForKey:@"IMAGE_URL"];
+    self.webURL = [aDecoder decodeObjectForKey:@"WEB_URL"];
+    self.localURL = [aDecoder decodeObjectForKey:@"LOCAL_URL"];
 
   }
   return self;

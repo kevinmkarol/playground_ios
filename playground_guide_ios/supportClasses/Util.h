@@ -14,7 +14,6 @@
 #define getDataURL @"http://kevinmkarol.com/playgroundapp"
 
 +(NSDictionary *)upcomingShows;
-+(NSMutableArray *) arrayContentsOfFile: (NSString *)fileName;
 +(BOOL) isIpad;
 
 

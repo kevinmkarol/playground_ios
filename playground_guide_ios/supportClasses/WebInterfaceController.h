@@ -26,7 +26,8 @@
 //Fetches google sheet information as CSV data
 -(void)fetchNewProgramInformation;
 
-
+//Download an updated image file from the web
+-(void)downloadInstallationImage;
 
 
 @end

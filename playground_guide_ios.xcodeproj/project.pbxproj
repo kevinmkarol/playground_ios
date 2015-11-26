@@ -45,6 +45,7 @@
 		0A8935E31C06947F0005F554 /* InstallationImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8935E21C06947F0005F554 /* InstallationImage.m */; };
 		0A8935E61C06949C0005F554 /* CreditInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8935E51C06949C0005F554 /* CreditInfo.m */; };
 		0A8935E91C0694AD0005F554 /* InstallationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8935E81C0694AD0005F554 /* InstallationInfo.m */; };
+		0A8935EC1C06C4390005F554 /* BreakInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8935EB1C06C4390005F554 /* BreakInfo.m */; };
 		0AA4D6BE1C05A3BB0022243B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D68F1C05A3BB0022243B /* AppDelegate.m */; };
 		0AA4D6BF1C05A3BB0022243B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AA4D6901C05A3BB0022243B /* Main_iPad.storyboard */; };
 		0AA4D6C01C05A3BB0022243B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AA4D6921C05A3BB0022243B /* InfoPlist.strings */; };
@@ -61,7 +62,6 @@
 		0AA4D6CB1C05A3BB0022243B /* masterTable_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6AA1C05A3BB0022243B /* masterTable_iPhone.m */; };
 		0AA4D6CC1C05A3BB0022243B /* showListingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6AC1C05A3BB0022243B /* showListingsViewController.m */; };
 		0AA4D6CD1C05A3BB0022243B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6AD1C05A3BB0022243B /* main.m */; };
-		0AA4D6CF1C05A3BB0022243B /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6B21C05A3BB0022243B /* helpers.m */; };
 		0AA4D6D01C05A3BB0022243B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6B41C05A3BB0022243B /* Reachability.m */; };
 		0AA4D6D11C05A3BB0022243B /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6B61C05A3BB0022243B /* Util.m */; };
 		0AA4D6D41C05A3BB0022243B /* ShowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6BD1C05A3BB0022243B /* ShowInfo.m */; };
@@ -196,6 +196,8 @@
 		0A8935E51C06949C0005F554 /* CreditInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditInfo.m; sourceTree = "<group>"; };
 		0A8935E71C0694AD0005F554 /* InstallationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallationInfo.h; sourceTree = "<group>"; };
 		0A8935E81C0694AD0005F554 /* InstallationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallationInfo.m; sourceTree = "<group>"; };
+		0A8935EA1C06C4390005F554 /* BreakInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BreakInfo.h; sourceTree = "<group>"; };
+		0A8935EB1C06C4390005F554 /* BreakInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreakInfo.m; sourceTree = "<group>"; };
 		0AA4D68E1C05A3BB0022243B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AA4D68F1C05A3BB0022243B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0AA4D6911C05A3BB0022243B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
@@ -225,8 +227,6 @@
 		0AA4D6AD1C05A3BB0022243B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AA4D6AE1C05A3BB0022243B /* playground_guide_ios-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "playground_guide_ios-Info.plist"; sourceTree = "<group>"; };
 		0AA4D6AF1C05A3BB0022243B /* playground_guide_ios-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "playground_guide_ios-Prefix.pch"; sourceTree = "<group>"; };
-		0AA4D6B11C05A3BB0022243B /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
-		0AA4D6B21C05A3BB0022243B /* helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = helpers.m; sourceTree = "<group>"; };
 		0AA4D6B31C05A3BB0022243B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		0AA4D6B41C05A3BB0022243B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		0AA4D6B51C05A3BB0022243B /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
@@ -403,8 +403,6 @@
 		0AA4D6B01C05A3BB0022243B /* supportClasses */ = {
 			isa = PBXGroup;
 			children = (
-				0AA4D6B11C05A3BB0022243B /* helpers.h */,
-				0AA4D6B21C05A3BB0022243B /* helpers.m */,
 				0AA4D6B31C05A3BB0022243B /* Reachability.h */,
 				0AA4D6B41C05A3BB0022243B /* Reachability.m */,
 				0AA4D6B51C05A3BB0022243B /* Util.h */,
@@ -428,6 +426,8 @@
 				0A8935E51C06949C0005F554 /* CreditInfo.m */,
 				0A8935E71C0694AD0005F554 /* InstallationInfo.h */,
 				0A8935E81C0694AD0005F554 /* InstallationInfo.m */,
+				0A8935EA1C06C4390005F554 /* BreakInfo.h */,
+				0A8935EB1C06C4390005F554 /* BreakInfo.m */,
 			);
 			path = wrappers;
 			sourceTree = "<group>";
@@ -689,12 +689,12 @@
 				0AA4D6CC1C05A3BB0022243B /* showListingsViewController.m in Sources */,
 				0AA4D6D11C05A3BB0022243B /* Util.m in Sources */,
 				0AA4D6BE1C05A3BB0022243B /* AppDelegate.m in Sources */,
-				0AA4D6CF1C05A3BB0022243B /* helpers.m in Sources */,
 				0AA4D6CB1C05A3BB0022243B /* masterTable_iPhone.m in Sources */,
 				0AA4D6C41C05A3BB0022243B /* iPad_Shows_ViewController.m in Sources */,
 				0AA4D6C61C05A3BB0022243B /* showListIpad.m in Sources */,
 				0AA4E37C1C06630C0022243B /* WebInterfaceController.m in Sources */,
 				0AA4D6D01C05A3BB0022243B /* Reachability.m in Sources */,
+				0A8935EC1C06C4390005F554 /* BreakInfo.m in Sources */,
 				0AA4D6C31C05A3BB0022243B /* iPad_Description_ViewController.m in Sources */,
 				0AA4D6CD1C05A3BB0022243B /* main.m in Sources */,
 				0AA4D6C91C05A3BB0022243B /* InstallationTableViewController.m in Sources */,
