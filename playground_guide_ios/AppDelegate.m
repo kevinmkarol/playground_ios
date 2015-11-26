@@ -13,6 +13,7 @@
 #import "Reachability.h"
 #import "iPad_Shows_ViewController.h"
 #import "iPad_Description_ViewController.h"
+#import "WebInterfaceController.h"
 
 @implementation AppDelegate
 
@@ -36,6 +37,8 @@
     if (internetStatus != NotReachable) {
         [Util retrieveData];
     }
+    
+    [[[WebInterfaceController alloc] init] fetchNewProgramInformation];
     
     return YES;
 }

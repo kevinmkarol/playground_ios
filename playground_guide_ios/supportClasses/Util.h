@@ -17,7 +17,6 @@
 +(NSDictionary *)upcomingShows;
 +(NSMutableArray *) arrayContentsOfFile: (NSString *)fileName;
 +(BOOL) isIpad;
-+(void) addMyList: (NSDictionary *)myShowInfo;
 
 
 @end

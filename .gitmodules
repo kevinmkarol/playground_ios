@@ -1,3 +1,15 @@
-[submodule "google-api-objectivec-client"]
-	path = google-api-objectivec-client
+[submodule "googleLibraries/google-api-objectivec-client"]
+	path = googleLibraries/google-api-objectivec-client
 	url = https://github.com/google/google-api-objectivec-client.git
+[submodule "googleLibraries/gtm-oauth2"]
+	path = googleLibraries/gtm-oauth2
+	url = https://github.com/google/gtm-oauth2.git
+[submodule "googleLibraries/gtm-session-fetcher"]
+	path = googleLibraries/gtm-session-fetcher
+	url = https://github.com/google/gtm-session-fetcher.git
+[submodule "googleLibraries/-b"]
+	path = googleLibraries/-b
+	url = https://github.com/stig/json-framework.git
+[submodule "googleLibraries/json-framework"]
+	path = googleLibraries/json-framework
+	url = https://github.com/stig/json-framework.git

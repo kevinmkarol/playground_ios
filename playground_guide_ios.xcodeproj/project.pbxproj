@@ -60,9 +60,12 @@
 		0AA4D6CF1C05A3BB0022243B /* helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6B21C05A3BB0022243B /* helpers.m */; };
 		0AA4D6D01C05A3BB0022243B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6B41C05A3BB0022243B /* Reachability.m */; };
 		0AA4D6D11C05A3BB0022243B /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6B61C05A3BB0022243B /* Util.m */; };
-		0AA4D6D21C05A3BB0022243B /* myList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6B91C05A3BB0022243B /* myList.m */; };
-		0AA4D6D31C05A3BB0022243B /* myShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6BB1C05A3BB0022243B /* myShow.m */; };
 		0AA4D6D41C05A3BB0022243B /* ShowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D6BD1C05A3BB0022243B /* ShowInfo.m */; };
+		0AA4E37C1C06630C0022243B /* WebInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4E37B1C06630C0022243B /* WebInterfaceController.m */; };
+		0AA4E3C51C06778B0022243B /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA4E3951C0675B00022243B /* libGTLTouchStaticLib.a */; };
+		0AA4E3CA1C0677920022243B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA4E3C91C0677920022243B /* Security.framework */; };
+		0AA4E3CC1C0677990022243B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA4E3CB1C0677990022243B /* SystemConfiguration.framework */; };
+		0AA4E3CF1C0678680022243B /* GTLDrive_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4E3CD1C0678680022243B /* GTLDrive_Sources.m */; };
 		0ABC0F411C058A9C00A8EA1E /* playground_guide_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC0F401C058A9C00A8EA1E /* playground_guide_iosTests.m */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,76 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0A04450D1874CB31003D4A4D;
 			remoteInfo = playground2014;
+		};
+		0AA4E3941C0675B00022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E37D1C0675AA0022243B /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F12027C11A4CA2F00BEB470;
+			remoteInfo = GTLTouchStaticLib;
+		};
+		0AA4E3961C0675B00022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E37D1C0675AA0022243B /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F12027D11A4CA2F00BEB470;
+			remoteInfo = GTLUnitTests;
+		};
+		0AA4E3981C0675B00022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E37D1C0675AA0022243B /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
+			remoteInfo = DevelopmentTestTool;
+		};
+		0AA4E3A31C0675C90022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F5566C81862981000D6D62C;
+			remoteInfo = FetcherMacTests;
+		};
+		0AA4E3A51C0675C90022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F34A21B187CCBB50012E91E;
+			remoteInfo = FetcherOSXTestApp;
+		};
+		0AA4E3A71C0675C90022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8EC5668D18AAFB1200E2C97D;
+			remoteInfo = FetcheriOSTestApp;
+		};
+		0AA4E3A91C0675C90022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8EC566A518AAFB1200E2C97D;
+			remoteInfo = FetcheriOSTests;
+		};
+		0AA4E3AB1C0675C90022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4FA025621BB21EAB00BB255C;
+			remoteInfo = GTMSessionFetcherOSX;
+		};
+		0AA4E3AD1C0675C90022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4FEE14271BB22328002ACBF8;
+			remoteInfo = GTMSessionFetcherIOS;
+		};
+		0AA4E3C71C06778C0022243B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0AA4E3B31C0676490022243B;
+			remoteInfo = GTMSessionFetcherLib;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -146,12 +219,16 @@
 		0AA4D6B41C05A3BB0022243B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		0AA4D6B51C05A3BB0022243B /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		0AA4D6B61C05A3BB0022243B /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
-		0AA4D6B81C05A3BB0022243B /* myList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myList.h; sourceTree = "<group>"; };
-		0AA4D6B91C05A3BB0022243B /* myList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myList.m; sourceTree = "<group>"; };
-		0AA4D6BA1C05A3BB0022243B /* myShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myShow.h; sourceTree = "<group>"; };
-		0AA4D6BB1C05A3BB0022243B /* myShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myShow.m; sourceTree = "<group>"; };
 		0AA4D6BC1C05A3BB0022243B /* ShowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowInfo.h; sourceTree = "<group>"; };
 		0AA4D6BD1C05A3BB0022243B /* ShowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowInfo.m; sourceTree = "<group>"; };
+		0AA4E37A1C06630C0022243B /* WebInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInterfaceController.h; sourceTree = "<group>"; };
+		0AA4E37B1C06630C0022243B /* WebInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebInterfaceController.m; sourceTree = "<group>"; };
+		0AA4E37D1C0675AA0022243B /* GTL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTL.xcodeproj; path = "../googleLibraries/google-api-objectivec-client/Source/GTL.xcodeproj"; sourceTree = "<group>"; };
+		0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTMSessionFetcherCore.xcodeproj; path = "googleLibraries/gtm-session-fetcher/Source/GTMSessionFetcherCore.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		0AA4E3C91C0677920022243B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0AA4E3CB1C0677990022243B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0AA4E3CD1C0678680022243B /* GTLDrive_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLDrive_Sources.m; path = "googleLibraries/google-api-objectivec-client/Source/Services/Drive/Generated/GTLDrive_Sources.m"; sourceTree = "<group>"; };
+		0AA4E3CE1C0678680022243B /* GTLDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLDrive.h; path = "googleLibraries/google-api-objectivec-client/Source/Services/Drive/Generated/GTLDrive.h"; sourceTree = "<group>"; };
 		0ABC0EF41C0588F000A8EA1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0ABC0EF61C0588F000A8EA1E /* playground_guide_iosTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "playground_guide_iosTests-Info.plist"; sourceTree = "<group>"; };
 		0ABC0F401C058A9C00A8EA1E /* playground_guide_iosTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playground_guide_iosTests.m; sourceTree = "<group>"; };
@@ -162,6 +239,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA4E3CC1C0677990022243B /* SystemConfiguration.framework in Frameworks */,
+				0AA4E3CA1C0677920022243B /* Security.framework in Frameworks */,
+				0AA4E3C51C06778B0022243B /* libGTLTouchStaticLib.a in Frameworks */,
 				0A044581187B462C003D4A4D /* iAd.framework in Frameworks */,
 				0A0445141874CB31003D4A4D /* CoreGraphics.framework in Frameworks */,
 				0A0445161874CB31003D4A4D /* UIKit.framework in Frameworks */,
@@ -185,6 +265,8 @@
 		0A0445051874CB31003D4A4D = {
 			isa = PBXGroup;
 			children = (
+				0AA4E3CD1C0678680022243B /* GTLDrive_Sources.m */,
+				0AA4E3CE1C0678680022243B /* GTLDrive.h */,
 				0AA4D68D1C05A3BB0022243B /* playground_guide_ios */,
 				0ABC0EF21C0588F000A8EA1E /* playground_guide_iosTests */,
 				0A0AAB011898E60E00E46245 /* Default-568h@2x.png */,
@@ -206,6 +288,8 @@
 		0A0445101874CB31003D4A4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AA4E3CB1C0677990022243B /* SystemConfiguration.framework */,
+				0AA4E3C91C0677920022243B /* Security.framework */,
 				0A044580187B462C003D4A4D /* iAd.framework */,
 				0A0445111874CB31003D4A4D /* Foundation.framework */,
 				0A0445131874CB31003D4A4D /* CoreGraphics.framework */,
@@ -251,6 +335,8 @@
 		0AA4D68D1C05A3BB0022243B /* playground_guide_ios */ = {
 			isa = PBXGroup;
 			children = (
+				0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */,
+				0AA4E37D1C0675AA0022243B /* GTL.xcodeproj */,
 				0AA4D68E1C05A3BB0022243B /* AppDelegate.h */,
 				0AA4D68F1C05A3BB0022243B /* AppDelegate.m */,
 				0AA4D6901C05A3BB0022243B /* Main_iPad.storyboard */,
@@ -311,6 +397,8 @@
 				0AA4D6B41C05A3BB0022243B /* Reachability.m */,
 				0AA4D6B51C05A3BB0022243B /* Util.h */,
 				0AA4D6B61C05A3BB0022243B /* Util.m */,
+				0AA4E37A1C06630C0022243B /* WebInterfaceController.h */,
+				0AA4E37B1C06630C0022243B /* WebInterfaceController.m */,
 			);
 			path = supportClasses;
 			sourceTree = "<group>";
@@ -318,14 +406,34 @@
 		0AA4D6B71C05A3BB0022243B /* wrappers */ = {
 			isa = PBXGroup;
 			children = (
-				0AA4D6B81C05A3BB0022243B /* myList.h */,
-				0AA4D6B91C05A3BB0022243B /* myList.m */,
-				0AA4D6BA1C05A3BB0022243B /* myShow.h */,
-				0AA4D6BB1C05A3BB0022243B /* myShow.m */,
 				0AA4D6BC1C05A3BB0022243B /* ShowInfo.h */,
 				0AA4D6BD1C05A3BB0022243B /* ShowInfo.m */,
 			);
 			path = wrappers;
+			sourceTree = "<group>";
+		};
+		0AA4E38C1C0675B00022243B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AA4E3951C0675B00022243B /* libGTLTouchStaticLib.a */,
+				0AA4E3971C0675B00022243B /* GTLUnitTests.xctest */,
+				0AA4E3991C0675B00022243B /* DevelopmentTestTool */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AA4E39B1C0675C90022243B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AA4E3A41C0675C90022243B /* FetcherMacTests.xctest */,
+				0AA4E3A61C0675C90022243B /* FetcherOSXTestApp.app */,
+				0AA4E3A81C0675C90022243B /* FetcheriOSTestApp.app */,
+				0AA4E3AA1C0675C90022243B /* FetcheriOSTests.xctest */,
+				0AA4E3AC1C0675C90022243B /* GTMSessionFetcherOSX.framework */,
+				0AA4E3AE1C0675C90022243B /* GTMSessionFetcherIOS.framework */,
+				0AA4E3C81C06778C0022243B /* libGTMSessionFetcherLib.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		0ABC0EF21C0588F000A8EA1E /* playground_guide_iosTests */ = {
@@ -400,10 +508,21 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = 0A0445051874CB31003D4A4D;
 			productRefGroup = 0A04450F1874CB31003D4A4D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0AA4E38C1C0675B00022243B /* Products */;
+					ProjectRef = 0AA4E37D1C0675AA0022243B /* GTL.xcodeproj */;
+				},
+				{
+					ProductGroup = 0AA4E39B1C0675C90022243B /* Products */;
+					ProjectRef = 0AA4E39A1C0675C90022243B /* GTMSessionFetcherCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0A04450D1874CB31003D4A4D /* playground_guide_ios */,
@@ -411,6 +530,79 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0AA4E3951C0675B00022243B /* libGTLTouchStaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGTLTouchStaticLib.a;
+			remoteRef = 0AA4E3941C0675B00022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3971C0675B00022243B /* GTLUnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GTLUnitTests.xctest;
+			remoteRef = 0AA4E3961C0675B00022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3991C0675B00022243B /* DevelopmentTestTool */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = DevelopmentTestTool;
+			remoteRef = 0AA4E3981C0675B00022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3A41C0675C90022243B /* FetcherMacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FetcherMacTests.xctest;
+			remoteRef = 0AA4E3A31C0675C90022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3A61C0675C90022243B /* FetcherOSXTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = FetcherOSXTestApp.app;
+			remoteRef = 0AA4E3A51C0675C90022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3A81C0675C90022243B /* FetcheriOSTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = FetcheriOSTestApp.app;
+			remoteRef = 0AA4E3A71C0675C90022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3AA1C0675C90022243B /* FetcheriOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FetcheriOSTests.xctest;
+			remoteRef = 0AA4E3A91C0675C90022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3AC1C0675C90022243B /* GTMSessionFetcherOSX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTMSessionFetcherOSX.framework;
+			remoteRef = 0AA4E3AB1C0675C90022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3AE1C0675C90022243B /* GTMSessionFetcherIOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTMSessionFetcherIOS.framework;
+			remoteRef = 0AA4E3AD1C0675C90022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AA4E3C81C06778C0022243B /* libGTMSessionFetcherLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGTMSessionFetcherLib.a;
+			remoteRef = 0AA4E3C71C06778C0022243B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0A04450C1874CB31003D4A4D /* Resources */ = {
@@ -469,16 +661,16 @@
 				0AA4D6CA1C05A3BB0022243B /* iPhone_Description_ViewController.m in Sources */,
 				0AA4D6D41C05A3BB0022243B /* ShowInfo.m in Sources */,
 				0AA4D6C81C05A3BB0022243B /* InstallationMapViewController.m in Sources */,
-				0AA4D6D31C05A3BB0022243B /* myShow.m in Sources */,
+				0AA4E3CF1C0678680022243B /* GTLDrive_Sources.m in Sources */,
 				0AA4D6C71C05A3BB0022243B /* FirstViewController.m in Sources */,
 				0AA4D6CC1C05A3BB0022243B /* showListingsViewController.m in Sources */,
-				0AA4D6D21C05A3BB0022243B /* myList.m in Sources */,
 				0AA4D6D11C05A3BB0022243B /* Util.m in Sources */,
 				0AA4D6BE1C05A3BB0022243B /* AppDelegate.m in Sources */,
 				0AA4D6CF1C05A3BB0022243B /* helpers.m in Sources */,
 				0AA4D6CB1C05A3BB0022243B /* masterTable_iPhone.m in Sources */,
 				0AA4D6C41C05A3BB0022243B /* iPad_Shows_ViewController.m in Sources */,
 				0AA4D6C61C05A3BB0022243B /* showListIpad.m in Sources */,
+				0AA4E37C1C06630C0022243B /* WebInterfaceController.m in Sources */,
 				0AA4D6D01C05A3BB0022243B /* Reachability.m in Sources */,
 				0AA4D6C31C05A3BB0022243B /* iPad_Description_ViewController.m in Sources */,
 				0AA4D6CD1C05A3BB0022243B /* main.m in Sources */,
@@ -623,11 +815,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playground_guide_ios/playground_guide_ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "GTM_USE_SESSION_FETCHER=1";
 				INFOPLIST_FILE = "$(SRCROOT)/playground_guide_ios/playground_guide_ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = playground_guide_ios;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "googleLibraries/gtm-session-fetcher/Source/ googleLibraries/google-api-objectivec-client/Source/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -641,11 +839,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playground_guide_ios/playground_guide_ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "GTM_USE_SESSION_FETCHER=1";
 				INFOPLIST_FILE = "$(SRCROOT)/playground_guide_ios/playground_guide_ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = playground_guide_ios;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "googleLibraries/gtm-session-fetcher/Source/ googleLibraries/google-api-objectivec-client/Source/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -735,11 +939,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "playground_guide_ios/playground_guide_ios-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "GTM_USE_SESSION_FETCHER=1";
 				INFOPLIST_FILE = "$(SRCROOT)/playground_guide_ios/playground_guide_ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = playground_guide_ios;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "googleLibraries/gtm-session-fetcher/Source/ googleLibraries/google-api-objectivec-client/Source/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Distribution;

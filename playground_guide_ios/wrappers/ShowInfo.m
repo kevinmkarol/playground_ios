@@ -10,6 +10,4 @@
 
 @implementation ShowInfo
 
-@synthesize title, participants, audienceWarnings, specialThanks, time, location, description, showCreator;
-
 @end

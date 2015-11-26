@@ -9,19 +9,8 @@
 #import "Util.h"
 #import "helpers.h"
 #import "ShowInfo.h"
-#import "myShow.h"
-#import "myList.h"
 
 @implementation Util
-
-
-+(void)addMyList: (NSDictionary *)myShowInfo{
-    UILocalNotification *newNotification = [myShowInfo objectForKey:@"notification"];
-    ShowInfo *showStats = [myShowInfo objectForKey:@"title"];
-    
-    //create instance of myShow and add to myList
-    
-}
 
 +(void)retrieveData{
     if([helpers needsUpdate]){
