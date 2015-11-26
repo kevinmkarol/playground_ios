@@ -8,6 +8,7 @@
 
 #import "WebInterfaceController.h"
 #import "ProgramInformationInterface.h"
+#import "InstallationImage.h"
 
 @implementation WebInterfaceController
 
@@ -48,8 +49,31 @@
 }
 
 
+-(void)downloadAllInstallationImages{
+  NSArray* imageWrappers = [[ProgramInformationInterface sharedManager] getProgramInformation:INSTALLATION_IMAGES_FILE_NAME];
+  for(InstallationImage* imageInfo in imageWrappers){
+      NSURL* url = [imageInfo webURL];
+      
+      NSURLSessionDataTask* task = [[NSURLSession sharedSession] dataTaskWithURL:url
+                                    completionHandler:^(NSData* data,
+                                                        NSURLResponse* response,
+                                                        NSError* error){
+        if(!error){
+          [[ProgramInformationInterface sharedManager] saveInstallationImage:data imageWrapper:imageInfo];
+
+        }else{
+          NSLog(@"Error: %@", error.localizedDescription);
+        }
+      }];
+      
+      [task resume];
+  }
 
 
 
+
+
+
+}
 
 @end

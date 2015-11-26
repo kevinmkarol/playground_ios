@@ -14,7 +14,6 @@
 {
   [aCoder encodeObject:self.imageName forKey:@"IMAGE_NAME"];
   [aCoder encodeObject:self.webURL forKey:@"WEB_URL"];
-  [aCoder encodeObject:self.localURL forKey:@"LOCAL_URL"];
 
 
 }
@@ -24,7 +23,6 @@
   if(self = [super init]){
     self.imageName = [aDecoder decodeObjectForKey:@"IMAGE_NAME"];
     self.webURL = [aDecoder decodeObjectForKey:@"WEB_URL"];
-    self.localURL = [aDecoder decodeObjectForKey:@"LOCAL_URL"];
 
   }
   return self;

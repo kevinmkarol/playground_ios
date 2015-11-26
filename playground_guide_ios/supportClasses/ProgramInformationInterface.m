@@ -8,10 +8,10 @@
 
 #import "ProgramInformationInterface.h"
 #import "ShowInfo.h"
-#import "InstallationImage.h"
 #import "CreditInfo.h"
 #import "InstallationInfo.h"
 #import "BreakInfo.h"
+#import "WebInterfaceController.h"
 
 @implementation ProgramInformationInterface
 
@@ -65,6 +65,17 @@
   return false;
 }
 
+-(float)getVersionNumber{
+  float versionNumber = 0.0f;
+  NSArray* singleEntry = [self getProgramInformation:VERSION_FILE_NAME];
+  if([singleEntry count] == 1){
+    NSNumber* version = singleEntry[0];
+    versionNumber = [version floatValue];
+  }
+  return versionNumber;
+}
+
+
 -(NSString*)pathToFile:(NSString*)fileName
 {
   NSFileManager* fm = [NSFileManager defaultManager];
@@ -113,6 +124,23 @@
   }
 }
 
+-(void)saveInstallationImage:(NSData*)imageData imageWrapper:(InstallationImage*)imageWrapper{
+    NSFileManager* fm = [NSFileManager defaultManager];
+    NSString* filePath = [self getPathToInstallationImage:imageWrapper];
+    [fm createFileAtPath:filePath  contents:imageData attributes:nil];
+}
+
+
+-(NSString*)getPathToInstallationImage:(InstallationImage*)imageWrapper{
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString* documentsDirectory = [paths objectAtIndex:0];
+    NSString* assetsDirectory = [documentsDirectory stringByAppendingPathComponent:@"images"];
+    NSString* fileString = [assetsDirectory stringByAppendingPathComponent:[imageWrapper imageName]];
+
+    return fileString;
+}
+
 
 -(NSArray*)getProgramInformation:(NSString*)fileName
 {
@@ -155,9 +183,6 @@
 
 -(void)parseProgramInformation:(NSData*)programData
 {
-  NSString* sheetsContents = [[NSString alloc] initWithData:programData encoding:NSUTF8StringEncoding];
-  NSArray* lines = [sheetsContents componentsSeparatedByString:@"\r\n"];
-
 
   //Create date formatter
   NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
@@ -170,15 +195,37 @@
   [dateFormatter setDateFormat:@"MM-dd-yyyy-H-mm-ss"];
   
   //Initialize data for for loop
+  NSString* sheetsContents = [[NSString alloc] initWithData:programData encoding:NSUTF8StringEncoding];
+  NSArray* lines = [sheetsContents componentsSeparatedByString:@"\r\n"];
+
+  
+  float oldVersionNumber = [self getVersionNumber];
+  
   ProgramInformationType currentInfo = VERSION;
   NSMutableArray* cumulativeData = [[NSMutableArray alloc] init];
   
+  //This loop can be broken internally as well if the version number hasn't changed
+  bool isProgramInformationNew = true;
+  
   for(NSString* line in lines){
     NSArray* fields = [line componentsSeparatedByString:@","];
+
+    if(!isProgramInformationNew){
+      break;
+    }
     
+    //////////////
     //Save data to files when see row with special heading
+    //////////////
     if([fields[0] isEqualToString:@"Festival Dates"]){
       currentInfo = FESTIVAL_DATES;
+      [self saveProgramInformation:VERSION_FILE_NAME programInformation:cumulativeData];
+      [cumulativeData removeAllObjects];
+      
+      float newVersionNumber = [self getVersionNumber];
+      if(newVersionNumber <= oldVersionNumber){
+        isProgramInformationNew = false;
+      }
       continue;
     }else if([fields[0] isEqualToString:@"Installation Images"]){
       currentInfo = INSTALLATION_IMAGES;
@@ -225,12 +272,16 @@
       [cumulativeData removeAllObjects];
       continue;
     }
-
+    
+    ///////////////
     //Parse data for current data type
+    //////////////
     switch(currentInfo){
-       case VERSION:
+       case VERSION:{
+         NSNumber* versionNumber = [NSNumber numberWithFloat:[fields[1] floatValue]];
+         [cumulativeData addObject:versionNumber];
          break;
-         
+       }
        case FESTIVAL_DATES:{
         NSDate* thursday = [dateFormatter dateFromString:fields[1]];
         NSDate* friday = [dateFormatter dateFromString:fields[2]];
@@ -307,8 +358,8 @@
          [cumulativeData addObject:currentBreak];
          break;
        }
-    }
-  }
+    }//END Switch Statement
+  }// End for loop
   
   //Update the last time file info was downloaded
   NSCalendar *cal = [NSCalendar currentCalendar];
@@ -321,8 +372,10 @@
   NSString* filePath = [self pathToFile:LAST_UPDATE_FILE_NAME];
   NSData* fileData =  [NSKeyedArchiver archivedDataWithRootObject:@[tomorrow]];
   [fm createFileAtPath:filePath contents:fileData attributes:nil];
-
-
+  
+  if(isProgramInformationNew){
+    [[WebInterfaceController sharedManager] downloadAllInstallationImages];
+  }
 }
 
 

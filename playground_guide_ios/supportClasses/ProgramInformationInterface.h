@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+#import "InstallationImage.h"
 
 #define VERSION_FILE_NAME @"version"
 #define FESTIVAL_DATES_FILE_NAME @"dates"
@@ -55,6 +56,9 @@ typedef NS_ENUM(NSInteger, ProgramInformationType){
 //Checks to see if this class will return proper information when queried
 -(bool)isProgramInfoReady;
 
+//Returns the version number currently on file
+-(float)getVersionNumber;
+
 //Parses CSV data into NSDictionaries
 //NOTE: If the structure of the Sheets document changes, this function will
 //need to be re-written
@@ -62,6 +66,12 @@ typedef NS_ENUM(NSInteger, ProgramInformationType){
 
 //Saves NSDictionaries to the file system
 -(void)saveProgramInformation:(NSString*)fileName programInformation:(NSMutableArray*)programInformation;
+
+//Saves the image to the device, and stores its location in the imageWrapper
+-(void)saveInstallationImage:(NSData*)imageData imageWrapper:(InstallationImage*)imageWrapper;
+
+//Returns the path to an image
+-(NSString*)getPathToInstallationImage:(InstallationImage*)imageWrapper;
 
 //Returns the full file path for a fileName
 -(NSString*)pathToFile:(NSString*)fileName;

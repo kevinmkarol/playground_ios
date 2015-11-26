@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [displayMap setImage:[UIImage imageNamed:map]];
+    [displayMap setImage:[UIImage imageWithContentsOfFile:map]];
     
 }
 

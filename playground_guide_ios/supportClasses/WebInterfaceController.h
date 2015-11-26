@@ -27,7 +27,7 @@
 -(void)fetchNewProgramInformation;
 
 //Download an updated image file from the web
--(void)downloadInstallationImage;
+-(void)downloadAllInstallationImages;
 
 
 @end

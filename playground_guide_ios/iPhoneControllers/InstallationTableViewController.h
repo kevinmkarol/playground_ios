@@ -10,4 +10,6 @@
 
 @interface InstallationTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray* imageArray;
+
 @end

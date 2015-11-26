@@ -8,6 +8,8 @@
 
 #import "InstallationTableViewController.h"
 #import "InstallationMapViewController.h"
+#import "ProgramInformationInterface.h"
+#import "InstallationImage.h"
 
 @interface InstallationTableViewController ()
 
@@ -27,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _imageArray = [[ProgramInformationInterface sharedManager] getProgramInformation:INSTALLATION_IMAGES_FILE_NAME];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -52,19 +56,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 2;
+    return [_imageArray count];
 }
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"installationCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = [[_imageArray objectAtIndex:indexPath.row] imageName];
     
     return cell;
 }
-*/
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,8 +117,10 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSIndexPath* path = [self.tableView indexPathForSelectedRow];
     InstallationMapViewController *dvc = [segue destinationViewController];
-    [dvc setMap:[segue identifier]];
+    NSString* imagePath = [[ProgramInformationInterface sharedManager] getPathToInstallationImage:[_imageArray objectAtIndex:path.row]];
+    [dvc setMap:imagePath];
     
 }
 

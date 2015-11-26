@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) NSString* imageName;
 @property (nonatomic, strong) NSURL* webURL;
-@property (nonatomic, strong) NSURL* localURL;
 
 - (void)encodeWithCoder:(NSCoder *)aCoder;
 -(id)initWithCoder:(NSCoder *)aDecoder;
