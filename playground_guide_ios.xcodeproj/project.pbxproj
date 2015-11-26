@@ -41,6 +41,10 @@
 		0A2D5FE419330D810032EE51 /* p58.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D5FCA19330D810032EE51 /* p58.png */; };
 		0A2D5FE519330D810032EE51 /* p76.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D5FCB19330D810032EE51 /* p76.png */; };
 		0A2D5FE619330D810032EE51 /* p80.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2D5FCC19330D810032EE51 /* p80.png */; };
+		0A8935E01C0691660005F554 /* ProgramInformationInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8935DF1C0691660005F554 /* ProgramInformationInterface.m */; };
+		0A8935E31C06947F0005F554 /* InstallationImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8935E21C06947F0005F554 /* InstallationImage.m */; };
+		0A8935E61C06949C0005F554 /* CreditInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8935E51C06949C0005F554 /* CreditInfo.m */; };
+		0A8935E91C0694AD0005F554 /* InstallationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8935E81C0694AD0005F554 /* InstallationInfo.m */; };
 		0AA4D6BE1C05A3BB0022243B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4D68F1C05A3BB0022243B /* AppDelegate.m */; };
 		0AA4D6BF1C05A3BB0022243B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AA4D6901C05A3BB0022243B /* Main_iPad.storyboard */; };
 		0AA4D6C01C05A3BB0022243B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AA4D6921C05A3BB0022243B /* InfoPlist.strings */; };
@@ -184,6 +188,14 @@
 		0A2D5FCA19330D810032EE51 /* p58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p58.png; sourceTree = "<group>"; };
 		0A2D5FCB19330D810032EE51 /* p76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p76.png; sourceTree = "<group>"; };
 		0A2D5FCC19330D810032EE51 /* p80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p80.png; sourceTree = "<group>"; };
+		0A8935DE1C0691660005F554 /* ProgramInformationInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramInformationInterface.h; sourceTree = "<group>"; };
+		0A8935DF1C0691660005F554 /* ProgramInformationInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramInformationInterface.m; sourceTree = "<group>"; };
+		0A8935E11C06947F0005F554 /* InstallationImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallationImage.h; sourceTree = "<group>"; };
+		0A8935E21C06947F0005F554 /* InstallationImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallationImage.m; sourceTree = "<group>"; };
+		0A8935E41C06949C0005F554 /* CreditInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditInfo.h; sourceTree = "<group>"; };
+		0A8935E51C06949C0005F554 /* CreditInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditInfo.m; sourceTree = "<group>"; };
+		0A8935E71C0694AD0005F554 /* InstallationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallationInfo.h; sourceTree = "<group>"; };
+		0A8935E81C0694AD0005F554 /* InstallationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallationInfo.m; sourceTree = "<group>"; };
 		0AA4D68E1C05A3BB0022243B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AA4D68F1C05A3BB0022243B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0AA4D6911C05A3BB0022243B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
@@ -399,6 +411,8 @@
 				0AA4D6B61C05A3BB0022243B /* Util.m */,
 				0AA4E37A1C06630C0022243B /* WebInterfaceController.h */,
 				0AA4E37B1C06630C0022243B /* WebInterfaceController.m */,
+				0A8935DE1C0691660005F554 /* ProgramInformationInterface.h */,
+				0A8935DF1C0691660005F554 /* ProgramInformationInterface.m */,
 			);
 			path = supportClasses;
 			sourceTree = "<group>";
@@ -408,6 +422,12 @@
 			children = (
 				0AA4D6BC1C05A3BB0022243B /* ShowInfo.h */,
 				0AA4D6BD1C05A3BB0022243B /* ShowInfo.m */,
+				0A8935E11C06947F0005F554 /* InstallationImage.h */,
+				0A8935E21C06947F0005F554 /* InstallationImage.m */,
+				0A8935E41C06949C0005F554 /* CreditInfo.h */,
+				0A8935E51C06949C0005F554 /* CreditInfo.m */,
+				0A8935E71C0694AD0005F554 /* InstallationInfo.h */,
+				0A8935E81C0694AD0005F554 /* InstallationInfo.m */,
 			);
 			path = wrappers;
 			sourceTree = "<group>";
@@ -657,10 +677,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8935E61C06949C0005F554 /* CreditInfo.m in Sources */,
 				0AA4D6C51C05A3BB0022243B /* SecondViewController.m in Sources */,
 				0AA4D6CA1C05A3BB0022243B /* iPhone_Description_ViewController.m in Sources */,
 				0AA4D6D41C05A3BB0022243B /* ShowInfo.m in Sources */,
 				0AA4D6C81C05A3BB0022243B /* InstallationMapViewController.m in Sources */,
+				0A8935E91C0694AD0005F554 /* InstallationInfo.m in Sources */,
+				0A8935E01C0691660005F554 /* ProgramInformationInterface.m in Sources */,
 				0AA4E3CF1C0678680022243B /* GTLDrive_Sources.m in Sources */,
 				0AA4D6C71C05A3BB0022243B /* FirstViewController.m in Sources */,
 				0AA4D6CC1C05A3BB0022243B /* showListingsViewController.m in Sources */,
@@ -675,6 +698,7 @@
 				0AA4D6C31C05A3BB0022243B /* iPad_Description_ViewController.m in Sources */,
 				0AA4D6CD1C05A3BB0022243B /* main.m in Sources */,
 				0AA4D6C91C05A3BB0022243B /* InstallationTableViewController.m in Sources */,
+				0A8935E31C06947F0005F554 /* InstallationImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,10 +57,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setShowCreator: [temporary objectForKey:@"showCreator"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [showArray addObject: show];
 
@@ -107,8 +107,8 @@
         cell.detailTextLabel.text = subtitle;
     }
     else{
-        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
-        cell.detailTextLabel.text = subtitle;
+        //NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
+        //cell.detailTextLabel.text = subtitle;
     }
     return cell;
 }

@@ -7,9 +7,31 @@
 //
 
 #import "WebInterfaceController.h"
-
+#import "ProgramInformationInterface.h"
 
 @implementation WebInterfaceController
+
+
+-(id) init{
+  if(self = [super init]){
+
+  }
+  
+  return self;
+}
+
++(id) sharedManager{
+   static WebInterfaceController* sharedWebInterface = nil;
+   static dispatch_once_t onceToken;
+   dispatch_once(&onceToken, ^{
+        sharedWebInterface = [[self alloc] init];
+   });
+
+   return sharedWebInterface;
+}
+
+
+
 
 
 -(void)fetchNewProgramInformation
@@ -21,17 +43,17 @@
   
   [fetcher beginFetchWithCompletionHandler:^(NSData *data, NSError *error){
     if(error == nil){
-       NSLog(@"We're going to need a bigger function");
-       NSString* sheetsContents = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSArray* lines = [sheetsContents componentsSeparatedByString:@"\r\n"];
-
-       NSLog(sheetsContents);
+        [[ProgramInformationInterface sharedManager] parseProgramInformation:data];
     }else{
       NSLog(@"An error occured: %@", error);
     }
   }];
 
 }
+
+
+
+
 
 
 @end

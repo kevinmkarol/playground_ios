@@ -12,59 +12,6 @@
 
 @implementation Util
 
-+(void)retrieveData{
-    if([helpers needsUpdate]){
-        NSURL * url = [NSURL URLWithString: getDataURL];
-        NSData * data = [NSData dataWithContentsOfURL: url];
-        if(data != nil){
-            NSDictionary *jsonArray;
-    
-            jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-            
-            NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-            NSString *documentFolder = [path objectAtIndex:0];
-            NSString *filePath;
-
-            NSArray *thursday = [jsonArray objectForKey:@"thursday"];
-            NSArray *friday = [jsonArray objectForKey: @"friday"];
-            NSArray *saturday = [jsonArray objectForKey:@"saturday"];
-            NSArray *installation = [jsonArray objectForKey:@"installation"];
-    
-            NSArray *breaks = [jsonArray objectForKey: @"breakTimes"];
-
-            path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-            documentFolder = [path objectAtIndex:0];
-            filePath = [documentFolder stringByAppendingPathComponent:@"thursday.plist"];
-    
-    
-            [thursday writeToFile:filePath atomically: YES];
-    
-            filePath = [documentFolder stringByAppendingPathComponent:@"friday.plist"];
-
-            [friday writeToFile:filePath atomically: YES];
-    
-            filePath = [documentFolder stringByAppendingPathComponent:@"saturday.plist"];
-            [saturday writeToFile:filePath atomically: YES];
-    
-            filePath = [documentFolder stringByAppendingPathComponent:@"installation.plist"];
-            [installation writeToFile:filePath atomically: YES];
-    
-            filePath = [documentFolder stringByAppendingPathComponent:@"breaks.plist"];
-            [breaks writeToFile:filePath atomically: YES];
-        
-            NSTimeInterval oneDay = 86400;
-            NSDate *tomorrow = [[NSDate alloc] initWithTimeIntervalSinceNow:oneDay];
-            NSArray *oneEntry = [NSArray arrayWithObject:tomorrow];
-            filePath = [documentFolder stringByAppendingString:@"update.plist"];
-            [oneEntry writeToFile:filePath atomically:YES];
-        }
-        //Update the updater file so that it only connects every 24 hours
-
-    }
-
-}
-
-
 +(NSMutableArray *) arrayContentsOfFile: (NSString *)fileName{
     
     NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

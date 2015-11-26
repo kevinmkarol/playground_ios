@@ -13,7 +13,6 @@
 
 #define getDataURL @"http://kevinmkarol.com/playgroundapp"
 
-+(void)retrieveData;
 +(NSDictionary *)upcomingShows;
 +(NSMutableArray *) arrayContentsOfFile: (NSString *)fileName;
 +(BOOL) isIpad;

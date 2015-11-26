@@ -58,10 +58,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setParticipants: [temporary objectForKey:@"showParticipants"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [thursdayArray addObject: show];
     }
@@ -69,10 +69,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setParticipants: [temporary objectForKey:@"showParticipants"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [fridayArray addObject: show];
     }
@@ -80,10 +80,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setParticipants: [temporary objectForKey:@"showParticipants"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [saturdayArray addObject: show];
     }
@@ -91,10 +91,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setParticipants: [temporary objectForKey:@"showParticipants"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [installationArray addObject: show];
     }
@@ -168,20 +168,20 @@
     if(indexPath.section == 0) {
         ShowInfo *current = [thursdayArray objectAtIndex: indexPath.row];
         cell.textLabel.text = [current title];
-        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
-        cell.detailTextLabel.text = subtitle;
+        //NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
+        //cell.detailTextLabel.text = subtitle;
     }
     else if(indexPath.section == 1){
         ShowInfo *current = [fridayArray objectAtIndex: indexPath.row];
         cell.textLabel.text = [current title];
-        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
-        cell.detailTextLabel.text = subtitle;
+        //NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
+        //cell.detailTextLabel.text = subtitle;
     }
     else if(indexPath.section == 2){
         ShowInfo *current = [saturdayArray objectAtIndex: indexPath.row];
         cell.textLabel.text = [current title];
-        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
-        cell.detailTextLabel.text = subtitle;
+        //NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
+        //cell.detailTextLabel.text = subtitle;
     }
     else{
         ShowInfo *current = [installationArray objectAtIndex: indexPath.row];

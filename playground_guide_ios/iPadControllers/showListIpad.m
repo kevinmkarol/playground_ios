@@ -55,10 +55,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setParticipants: [temporary objectForKey:@"participants"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [thursdayArray addObject: show];
     }
@@ -66,10 +66,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setParticipants: [temporary objectForKey:@"participants"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [fridayArray addObject: show];
     }
@@ -77,10 +77,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setParticipants: [temporary objectForKey:@"participants"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [saturdayArray addObject: show];
     }
@@ -88,10 +88,10 @@
         show = [[ShowInfo alloc] init];
         [show setTitle: [temporary objectForKey: @"title"]];
         [show setParticipants: [temporary objectForKey:@"participants"]];
-        [show setDescription: [temporary objectForKey:@"description"]];
+        [show setProgramNote: [temporary objectForKey:@"description"]];
         [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
         [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        [show setTime: [temporary objectForKey:@"time"]];
+        //[show setTime: [temporary objectForKey:@"time"]];
         [show setLocation:[temporary objectForKey:@"location"]];
         [installationArray addObject: show];
     }

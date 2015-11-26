@@ -68,7 +68,7 @@
     [self.thanks setAdjustsFontSizeToFitWidth:YES];
 
     
-    [self setTitle: [NSMutableString stringWithFormat:@"%@-%@",[currentShow location],[currentShow time]]];
+    //[self setTitle: [NSMutableString stringWithFormat:@"%@-%@",[currentShow location],[currentShow time]]];
     
 }
 

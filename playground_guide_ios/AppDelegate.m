@@ -32,13 +32,10 @@
     [oneEntry writeToFile:filePath atomically:YES];
     
     
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
-    if (internetStatus != NotReachable) {
-        [Util retrieveData];
-    }
+    //Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    //NetworkStatus internetStatus = [reachability currentReachabilityStatus];
     
-    [[[WebInterfaceController alloc] init] fetchNewProgramInformation];
+    [[WebInterfaceController sharedManager] fetchNewProgramInformation];
     
     return YES;
 }
@@ -60,9 +57,6 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus internetStatus = [reachability currentReachabilityStatus];
-    if (internetStatus != NotReachable) {
-        [Util retrieveData];
-    }
     
     //[FirstViewController updateHome];
 }
