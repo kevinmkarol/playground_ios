@@ -1,10 +1,12 @@
-//
-//  InstallationInfo.h
-//  playground_guide_ios
-//
-//  Created by Kevin Karol on 11/25/15.
-//  Copyright © 2015 Kevin Karol. All rights reserved.
-//
+/**
+*  InstallationInfo.h
+*  playground_guide_ios
+*
+*  Created by Kevin Karol on 11/25/15.
+*  Copyright © 2015 Kevin Karol. All rights reserved.
+*
+*  A wrapper class for installation information
+**/
 
 #import <Foundation/Foundation.h>
 

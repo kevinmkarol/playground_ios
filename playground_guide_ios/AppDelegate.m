@@ -1,17 +1,12 @@
-//
-//  AppDelegate.m
-//  playground2014
-//
-//  Created by Kevin Karol on 1/1/14.
-//  Copyright (c) 2014 Kevin Karol. All rights reserved.
-//
+/**
+*  AppDelegate.m
+*  playground2014
+*
+*  Created by Kevin Karol on 1/1/14.
+*  Copyright (c) 2014 Kevin Karol. All rights reserved.
+**/
 
 #import "AppDelegate.h"
-#import "Util.h"
-#import "FirstViewController.h"
-#import "SecondViewController.h"
-#import "iPad_Shows_ViewController.h"
-#import "iPad_Description_ViewController.h"
 #import "WebInterfaceController.h"
 #import "ProgramInformationInterface.h"
 

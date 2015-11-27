@@ -1,10 +1,10 @@
-//
-//  Util.m
-//  playground2014
-//
-//  Created by Kevin Karol on 1/2/14.
-//  Copyright (c) 2014 Kevin Karol. All rights reserved.
-//
+/**
+*  Util.m
+*  playground2014
+*
+*  Created by Kevin Karol on 1/2/14.
+*  Copyright (c) 2014 Kevin Karol. All rights reserved.
+**/
 
 #import "Util.h"
 #import "ShowInfo.h"
@@ -19,10 +19,12 @@
     NSCalendar *gregorian = [NSCalendar currentCalendar];
 
     //set up array for breaktimes
-    NSArray *listOfBreaks = [[ProgramInformationInterface sharedManager] getProgramInformation:BREAKS_FILE_NAME];
+    NSArray *listOfBreaks = [[ProgramInformationInterface sharedManager]
+                             getProgramInformation:BREAKS_FILE_NAME];
     
     //set up array for showtimes
-    NSArray* listOfDates = [[ProgramInformationInterface sharedManager] getProgramInformation:FESTIVAL_DATES_FILE_NAME];
+    NSArray* listOfDates = [[ProgramInformationInterface sharedManager]
+                            getProgramInformation:FESTIVAL_DATES_FILE_NAME];
     
     NSDate *thursday = listOfDates[0];
     NSDate *friday = listOfDates[1];
@@ -32,14 +34,17 @@
     NSArray *shows;
     
     if([saturday timeIntervalSinceNow] < 0){
-        shows = [[ProgramInformationInterface sharedManager] getProgramInformation:SATURDAY_FILE_NAME];
+        shows = [[ProgramInformationInterface sharedManager]
+                 getProgramInformation:SATURDAY_FILE_NAME];
         
     }
     else if([friday timeIntervalSinceNow] < 0){
-        shows = [[ProgramInformationInterface sharedManager] getProgramInformation:FRIDAY_FILE_NAME];
+        shows = [[ProgramInformationInterface sharedManager]
+                 getProgramInformation:FRIDAY_FILE_NAME];
     }
     else{
-        shows = [[ProgramInformationInterface sharedManager] getProgramInformation:THURSDAY_FILE_NAME];
+        shows = [[ProgramInformationInterface sharedManager]
+                 getProgramInformation:THURSDAY_FILE_NAME];
     }
 
 
@@ -126,11 +131,8 @@
 }
 
 +(BOOL) isIpad{
-#ifdef UI_USER_INTERFACE_IDIOM
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
-#else
-    return NO;
-#endif
+
 }
 
 

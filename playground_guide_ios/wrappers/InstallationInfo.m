@@ -1,10 +1,10 @@
-//
-//  InstallationInfo.m
-//  playground_guide_ios
-//
-//  Created by Kevin Karol on 11/25/15.
-//  Copyright © 2015 Kevin Karol. All rights reserved.
-//
+/**
+*  InstallationInfo.m
+*  playground_guide_ios
+*
+*  Created by Kevin Karol on 11/25/15.
+*  Copyright © 2015 Kevin Karol. All rights reserved.
+**/
 
 #import "InstallationInfo.h"
 

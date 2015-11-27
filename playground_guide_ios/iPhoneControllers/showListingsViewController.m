@@ -1,18 +1,14 @@
-//
-//  showListingsViewController.m
-//  playground2014
-//
-//  Created by Kevin Karol on 1/3/14.
-//  Copyright (c) 2014 Kevin Karol. All rights reserved.
-//
+/**
+*  showListingsViewController.m
+*  playground2014
+*
+*  Created by Kevin Karol on 1/3/14.
+*  Copyright (c) 2014 Kevin Karol. All rights reserved.
+**/
 
 #import "showListingsViewController.h"
 #import "Util.h"
 #import "ProgramInformationInterface.h"
-
-@interface showListingsViewController ()
-
-@end
 
 @implementation showListingsViewController
 
@@ -44,13 +40,6 @@
     else{
         //initialize list of shows to be pulled from myList - sorting here?
     }
-    
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,60 +66,29 @@
 {
     static NSString *CellIdentifier = @"performanceCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+
     // Configure the cell...
     ShowInfo *current = [_showArray objectAtIndex:indexPath.row];
     cell.textLabel.text =  [current title];
     
+    //Setup date formatter
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale* usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setLocale:usLocale];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+    [dateFormatter setDateFormat:@"h:mm"];
+    
     if([_plistSelector isEqualToString: @"installation"]){
-        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@",[current location]];
+        NSString *subtitle = [NSMutableString stringWithFormat:@"%@",[current location]];
         cell.detailTextLabel.text = subtitle;
     }
     else{
-        //NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
-        //cell.detailTextLabel.text = subtitle;
+        NSString* dateString = [dateFormatter stringFromDate:[current date]];
+        NSString *subtitle = [NSString stringWithFormat:@"%@-%@", dateString, [current location]];
+        cell.detailTextLabel.text = subtitle;
     }
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Navigation
 

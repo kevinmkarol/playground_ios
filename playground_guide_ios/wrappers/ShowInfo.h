@@ -1,10 +1,12 @@
-//
-//  ShowInfo.h
-//  playground2014
-//
-//  Created by Kevin Karol on 5/25/14.
-//  Copyright (c) 2014 Kevin Karol. All rights reserved.
-//
+/**
+*  ShowInfo.h
+*  playground2014
+*
+*  Created by Kevin Karol on 5/25/14.
+*  Copyright (c) 2014 Kevin Karol. All rights reserved.
+*
+*  A wrapper class for showInformation
+**/
 
 #import <Foundation/Foundation.h>
 

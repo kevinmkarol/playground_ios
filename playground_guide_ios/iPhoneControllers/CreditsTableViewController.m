@@ -1,31 +1,20 @@
-//
-//  CreditsTableViewController.m
-//  playground_guide_ios
-//
-//  Created by Kevin Karol on 11/26/15.
-//  Copyright © 2015 Kevin Karol. All rights reserved.
-//
+/**
+*  CreditsTableViewController.m
+*  playground_guide_ios
+*
+*  Created by Kevin Karol on 11/26/15.
+*  Copyright © 2015 Kevin Karol. All rights reserved.
+**/
 
 #import "CreditsTableViewController.h"
 #import "ProgramInformationInterface.h"
 #import "CreditInfo.h"
 
-@interface CreditsTableViewController ()
-
-@end
-
 @implementation CreditsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _festivalStaff = [[ProgramInformationInterface sharedManager] getProgramInformation:FESTIVAL_STAFF_FILE_NAME];
-    _specialThanks =[[ProgramInformationInterface sharedManager] getProgramInformation:SPECIAL_THANKS_FILE_NAME];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +25,10 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    _festivalStaff = [[ProgramInformationInterface sharedManager]
+                      getProgramInformation:FESTIVAL_STAFF_FILE_NAME];
+    _specialThanks =[[ProgramInformationInterface sharedManager]
+                     getProgramInformation:SPECIAL_THANKS_FILE_NAME];
     return 2;
 }
 
@@ -75,7 +68,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString* cellIdentifier = @"creditCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
+                                       forIndexPath:indexPath];
     
     switch(indexPath.section){
       case 0:{
@@ -95,49 +89,5 @@
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

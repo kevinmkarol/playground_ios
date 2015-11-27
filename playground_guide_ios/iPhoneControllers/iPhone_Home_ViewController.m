@@ -1,32 +1,18 @@
-//
-//  FirstViewController.m
-//  playground2014
-//
-//  Created by Kevin Karol on 1/1/14.
-//  Copyright (c) 2014 Kevin Karol. All rights reserved.
-//
+/**
+*  iPhone_Home_ViewController.m
+*  playground2014
+*
+*  Created by Kevin Karol on 1/1/14.
+*  Copyright (c) 2014 Kevin Karol. All rights reserved.
+**/
 
-#import "FirstViewController.h" 
+#import "iPhone_Home_ViewController.h"
 #import "Util.h"
 #import <iAd/iAd.h>
 #import <CoreFoundation/CoreFoundation.h>
 #import "ProgramInformationInterface.h"
 
-@interface FirstViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *currentlyPlaying;
-@property (weak, nonatomic) IBOutlet UILabel *nextPlaying;
-@property (weak, nonatomic) IBOutlet UILabel *afterPlaying;
-@property (weak, nonatomic) IBOutlet UITextView *nextBreak;
-
-
-@property (weak, nonatomic) IBOutlet UITextView *currentTime;
-@property (weak, nonatomic) IBOutlet UITextView *nextTime;
-@property (weak, nonatomic) IBOutlet UITextView *afterTime;
-
-
-@end
-
-@implementation FirstViewController
+@implementation iPhone_Home_ViewController
 
 -(void) updateHome
 {
@@ -48,7 +34,8 @@
 
             NSString *currentTime = [shows objectForKey:@"CurrentTime"];
             NSString *currentLocation = [shows objectForKey: @"CurrentLocation"];
-            NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", currentLocation, currentTime];
+            NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@",
+                                         currentLocation, currentTime];
             [self.currentTime setText: subtitle];
             [self.currentTime setTextAlignment: NSTextAlignmentCenter];
             [self.currentTime setTextColor:[UIColor whiteColor]];
@@ -72,7 +59,8 @@
             
             NSString *nextTime = [shows objectForKey: @"NextTime"];
             NSString *nextLocation = [shows objectForKey: @"NextLocation"];
-            NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", nextLocation, nextTime];
+            NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@",
+                                         nextLocation, nextTime];
             [self.nextTime setText: subtitle];
             [self.nextTime setTextAlignment: NSTextAlignmentCenter];
             [self.nextTime setTextColor:[UIColor whiteColor]];
@@ -93,7 +81,8 @@
 
             NSString *afterTime = [shows objectForKey: @"AfterTime"];
             NSString *afterLocation = [shows objectForKey: @"AfterLocation"];
-            NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", afterLocation, afterTime];
+            NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@",
+                                         afterLocation, afterTime];
             [self.afterTime setText: subtitle];
             [self.afterTime setTextAlignment: NSTextAlignmentCenter];
             [self.afterTime setTextColor:[UIColor whiteColor]];

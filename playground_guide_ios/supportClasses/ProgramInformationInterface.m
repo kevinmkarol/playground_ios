@@ -1,10 +1,10 @@
-//
-//  ProgramInformationInterface.m
-//  playground_guide_ios
-//
-//  Created by Kevin Karol on 11/25/15.
-//  Copyright © 2015 Kevin Karol. All rights reserved.
-//
+/**
+*  ProgramInformationInterface.m
+*  playground_guide_ios
+*
+*  Created by Kevin Karol on 11/25/15.
+*  Copyright © 2015 Kevin Karol. All rights reserved.
+**/
 
 #import "ProgramInformationInterface.h"
 #import "ShowInfo.h"
@@ -106,21 +106,29 @@
   
   //Keep the in-memory cache up to date
   if([fileName isEqualToString:VERSION_FILE_NAME]){
-    _version = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
+    _version = [NSKeyedUnarchiver unarchiveObjectWithData:
+                [NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: INSTALLATION_FILE_NAME]){
-    _installations = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
+    _installations = [NSKeyedUnarchiver unarchiveObjectWithData:
+                      [NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: INSTALLATION_IMAGES_FILE_NAME]){
-    _installationImages = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
+    _installationImages = [NSKeyedUnarchiver unarchiveObjectWithData:
+                           [NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: FESTIVAL_STAFF_FILE_NAME]){
-    _festivalStaff = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
+    _festivalStaff = [NSKeyedUnarchiver unarchiveObjectWithData:
+                     [NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: SPECIAL_THANKS_FILE_NAME]){
-    _specialThanks = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
+    _specialThanks = [NSKeyedUnarchiver unarchiveObjectWithData:
+                      [NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: THURSDAY_FILE_NAME]){
-    _thursday = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
+    _thursday = [NSKeyedUnarchiver unarchiveObjectWithData:
+                 [NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: FRIDAY_FILE_NAME]){
-    _friday = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
+    _friday = [NSKeyedUnarchiver unarchiveObjectWithData:
+               [NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }else if([fileName isEqualToString: SATURDAY_FILE_NAME]){
-    _saturday = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:programInformation]];
+    _saturday = [NSKeyedUnarchiver unarchiveObjectWithData:
+                 [NSKeyedArchiver archivedDataWithRootObject:programInformation]];
   }
 }
 
@@ -136,6 +144,15 @@
                                                          NSUserDomainMask, YES);
     NSString* documentsDirectory = [paths objectAtIndex:0];
     NSString* assetsDirectory = [documentsDirectory stringByAppendingPathComponent:@"images"];
+    
+    NSFileManager* fm = [NSFileManager defaultManager];
+    BOOL directoryExists = [fm fileExistsAtPath:assetsDirectory];
+    if(!directoryExists) {
+      NSError* err;
+      [fm createDirectoryAtPath:assetsDirectory
+          withIntermediateDirectories:YES attributes:nil error:&err];
+    }
+    
     NSString* fileString = [assetsDirectory stringByAppendingPathComponent:[imageWrapper imageName]];
 
     return fileString;
@@ -186,8 +203,6 @@
 
   //Create date formatter
   NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-  //dateFormatter.timeStyle = NSDateFormatterShortStyle;
-  //dateFormatter.dateStyle = NSDateFormatterShortStyle;
  
   NSLocale* usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
   [dateFormatter setLocale:usLocale];
@@ -195,7 +210,8 @@
   [dateFormatter setDateFormat:@"MM-dd-yyyy-H-mm-ss"];
   
   //Initialize data for for loop
-  NSString* sheetsContents = [[NSString alloc] initWithData:programData encoding:NSUTF8StringEncoding];
+  NSString* sheetsContents = [[NSString alloc]
+                              initWithData:programData encoding:NSUTF8StringEncoding];
   NSArray* lines = [sheetsContents componentsSeparatedByString:@"\r\n"];
 
   

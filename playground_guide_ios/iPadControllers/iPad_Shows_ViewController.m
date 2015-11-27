@@ -1,10 +1,10 @@
-//
-//  iPad_Shows_ViewController.m
-//  playground2014
-//
-//  Created by Kevin Karol on 1/6/14.
-//  Copyright (c) 2014 Kevin Karol. All rights reserved.
-//
+/**
+*  iPad_Shows_ViewController.m
+*  playground2014
+*
+*  Created by Kevin Karol on 1/6/14.
+*  Copyright (c) 2014 Kevin Karol. All rights reserved.
+**/
 
 #import "iPad_Shows_ViewController.h"
 #import "Util.h"
@@ -12,14 +12,7 @@
 #import "iPad_Description_ViewController.h"
 #import "ProgramInformationInterface.h"
 
-@interface iPad_Shows_ViewController ()
-
-@end
-
 @implementation iPad_Shows_ViewController
-
-@synthesize thursdayArray, fridayArray, saturdayArray, installationArray;
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,72 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSArray *thursdayShows = [[ProgramInformationInterface sharedManager] getProgramInformation:THURSDAY_FILE_NAME];
-    NSMutableArray *fridayShows = [[ProgramInformationInterface sharedManager] getProgramInformation:FRIDAY_FILE_NAME];
-    NSMutableArray *saturdayShows = [[ProgramInformationInterface sharedManager] getProgramInformation:SATURDAY_FILE_NAME];
-    NSMutableArray *installationShows = [[ProgramInformationInterface sharedManager] getProgramInformation:INSTALLATION_FILE_NAME];;
-
-    ShowInfo *show;
-    
-    thursdayArray = [[NSMutableArray alloc] init];
-    fridayArray = [[NSMutableArray alloc] init];
-    saturdayArray = [[NSMutableArray alloc] init];
-    installationArray = [[NSMutableArray alloc] init];
-
-    
-    
-    //Potentially modify the showInfo class to accomodate installations
-    for(NSMutableDictionary *temporary in thursdayShows){
-        show = [[ShowInfo alloc] init];
-        [show setTitle: [temporary objectForKey: @"title"]];
-        [show setParticipants: [temporary objectForKey:@"showParticipants"]];
-        [show setProgramNote: [temporary objectForKey:@"description"]];
-        [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
-        [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        //[show setTime: [temporary objectForKey:@"time"]];
-        [show setLocation:[temporary objectForKey:@"location"]];
-        [thursdayArray addObject: show];
-    }
-    for(NSMutableDictionary *temporary in fridayShows){
-        show = [[ShowInfo alloc] init];
-        [show setTitle: [temporary objectForKey: @"title"]];
-        [show setParticipants: [temporary objectForKey:@"showParticipants"]];
-        [show setProgramNote: [temporary objectForKey:@"description"]];
-        [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
-        [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        //[show setTime: [temporary objectForKey:@"time"]];
-        [show setLocation:[temporary objectForKey:@"location"]];
-        [fridayArray addObject: show];
-    }
-    for(NSMutableDictionary *temporary in saturdayShows){
-        show = [[ShowInfo alloc] init];
-        [show setTitle: [temporary objectForKey: @"title"]];
-        [show setParticipants: [temporary objectForKey:@"showParticipants"]];
-        [show setProgramNote: [temporary objectForKey:@"description"]];
-        [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
-        [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        //[show setTime: [temporary objectForKey:@"time"]];
-        [show setLocation:[temporary objectForKey:@"location"]];
-        [saturdayArray addObject: show];
-    }
-    for(NSMutableDictionary *temporary in installationShows){
-        show = [[ShowInfo alloc] init];
-        [show setTitle: [temporary objectForKey: @"title"]];
-        [show setParticipants: [temporary objectForKey:@"showParticipants"]];
-        [show setProgramNote: [temporary objectForKey:@"description"]];
-        [show setSpecialThanks:[temporary objectForKey:@"specialThanks"]];
-        [show setAudienceWarnings:[temporary objectForKey:@"audienceWarning"]];
-        //[show setTime: [temporary objectForKey:@"time"]];
-        [show setLocation:[temporary objectForKey:@"location"]];
-        [installationArray addObject: show];
-    }
+    _thursdayArray = [[ProgramInformationInterface sharedManager]
+                               getProgramInformation:THURSDAY_FILE_NAME];
+    _fridayArray = [[ProgramInformationInterface sharedManager]
+                                   getProgramInformation:FRIDAY_FILE_NAME];
+    _saturdayArray = [[ProgramInformationInterface sharedManager]
+                                     getProgramInformation:SATURDAY_FILE_NAME];
+    _installationArray = [[ProgramInformationInterface sharedManager]
+                                         getProgramInformation:INSTALLATION_FILE_NAME];
 }
 
 - (void)didReceiveMemoryWarning
@@ -121,41 +57,40 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    
+    int rowCount;
     //specify by section
     if(section == 0) {
-        
-        NSArray *thursday = [[ProgramInformationInterface sharedManager] getProgramInformation:THURSDAY_FILE_NAME];
-        return [thursday count];
+        rowCount = (int)[_thursdayArray count];
     }
     else if (section == 1){
-        NSArray *friday = [[ProgramInformationInterface sharedManager] getProgramInformation:FRIDAY_FILE_NAME];
-        return [friday count];
+        rowCount = (int)[_fridayArray count];
     }
     else if (section == 2){
-        NSArray *saturday = [[ProgramInformationInterface sharedManager] getProgramInformation:SATURDAY_FILE_NAME];
-        return [saturday count];
+        rowCount = (int)[_saturdayArray count];
     }
     else{
-        NSArray *installation = [[ProgramInformationInterface sharedManager] getProgramInformation:INSTALLATION_FILE_NAME];
-        return [installation count];
+        rowCount = (int)[_installationArray count];
     }
     
+    return rowCount;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    NSString* title;
     if(section == 0) {
-        return @"Thursday";
+        title = @"Thursday";
     }
     else if (section == 1){
-        return @"Friday";
+        title = @"Friday";
     }
     else if (section == 2){
-        return @"Saturday";
+        title = @"Saturday";
     }
     else{
-        return @"Installations";
+        title = @"Installations";
     }
+    
+    return title;
 }
 
 
@@ -163,74 +98,53 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"showCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+                                       forIndexPath:indexPath];
     
+    //Setup date formatter for subtitles
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale* usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setLocale:usLocale];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+    [dateFormatter setDateFormat:@"h:mm"];
+
     // Configure the cell...
     if(indexPath.section == 0) {
-        ShowInfo *current = [thursdayArray objectAtIndex: indexPath.row];
+        ShowInfo *current = [_thursdayArray objectAtIndex: indexPath.row];
         cell.textLabel.text = [current title];
-        //NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
-        //cell.detailTextLabel.text = subtitle;
+        
+        NSString* dateString = [dateFormatter stringFromDate:[current date]];
+        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@",
+                                      dateString, [current location]];
+        cell.detailTextLabel.text = subtitle;
     }
     else if(indexPath.section == 1){
-        ShowInfo *current = [fridayArray objectAtIndex: indexPath.row];
+        ShowInfo *current = [_fridayArray objectAtIndex: indexPath.row];
         cell.textLabel.text = [current title];
-        //NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
-        //cell.detailTextLabel.text = subtitle;
+        
+        NSString* dateString = [dateFormatter stringFromDate:[current date]];
+        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@",
+                                      dateString, [current location]];
+        cell.detailTextLabel.text = subtitle;
     }
     else if(indexPath.section == 2){
-        ShowInfo *current = [saturdayArray objectAtIndex: indexPath.row];
+        ShowInfo *current = [_saturdayArray objectAtIndex: indexPath.row];
         cell.textLabel.text = [current title];
-        //NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@", [current time], [current location]];
-        //cell.detailTextLabel.text = subtitle;
+        
+        NSString* dateString = [dateFormatter stringFromDate:[current date]];
+        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@-%@",
+                                       dateString, [current location]];
+        cell.detailTextLabel.text = subtitle;
     }
     else{
-        ShowInfo *current = [installationArray objectAtIndex: indexPath.row];
+        ShowInfo *current = [_installationArray objectAtIndex: indexPath.row];
         cell.textLabel.text = [current title];
-        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@",[current location]];
+        NSMutableString *subtitle = [NSMutableString stringWithFormat:@"%@",
+                                                     [current location]];
         cell.detailTextLabel.text = subtitle;
     }
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation
@@ -239,16 +153,16 @@
     ShowInfo *selected;
     
     if (indexPath.section == 0) {
-        selected = [thursdayArray objectAtIndex: indexPath.row];
+        selected = [_thursdayArray objectAtIndex: indexPath.row];
     }
     else if(indexPath.section == 1){
-        selected = [fridayArray objectAtIndex: indexPath.row];
+        selected = [_fridayArray objectAtIndex: indexPath.row];
     }
     else if(indexPath.section == 2){
-        selected = [saturdayArray objectAtIndex: indexPath.row];
+        selected = [_saturdayArray objectAtIndex: indexPath.row];
     }
     else{
-        selected = [installationArray objectAtIndex: indexPath.row];
+        selected = [_installationArray objectAtIndex: indexPath.row];
     }
     
     
@@ -264,19 +178,19 @@
     iPad_Description_ViewController *dvc = [segue destinationViewController];
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];
     if (path.section == 0) {
-        ShowInfo *c = [thursdayArray objectAtIndex: path.row];
+        ShowInfo *c = [_thursdayArray objectAtIndex: path.row];
         [dvc setCurrentShow:c];
     }
     else if(path.section == 1){
-        ShowInfo *c = [fridayArray objectAtIndex: path.row];
+        ShowInfo *c = [_fridayArray objectAtIndex: path.row];
         [dvc setCurrentShow:c];
     }
     else if(path.section == 2){
-        ShowInfo *c = [saturdayArray objectAtIndex: path.row];
+        ShowInfo *c = [_saturdayArray objectAtIndex: path.row];
         [dvc setCurrentShow:c];
     }
     else{
-        ShowInfo *c = [installationArray objectAtIndex: path.row];
+        ShowInfo *c = [_installationArray objectAtIndex: path.row];
         [dvc setCurrentShow:c];
     }
 }

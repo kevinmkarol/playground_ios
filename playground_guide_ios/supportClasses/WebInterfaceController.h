@@ -6,7 +6,6 @@
 *  Copyright © 2015 Kevin Karol. All rights reserved.
 *
 *  This class handles all interactions between the application and data stored online
-*
 **/
 
 #import <Foundation/Foundation.h>

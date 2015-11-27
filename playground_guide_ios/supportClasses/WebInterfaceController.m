@@ -1,10 +1,10 @@
-//
-//  WebInterfaceController.m
-//  playground_guide_ios
-//
-//  Created by Kevin Karol on 11/25/15.
-//  Copyright © 2015 Kevin Karol. All rights reserved.
-//
+/**
+*  WebInterfaceController.m
+*  playground_guide_ios
+*
+*  Created by Kevin Karol on 11/25/15.
+*  Copyright © 2015 Kevin Karol. All rights reserved.
+**/
 
 #import "WebInterfaceController.h"
 #import "ProgramInformationInterface.h"
@@ -59,7 +59,8 @@
                                                         NSURLResponse* response,
                                                         NSError* error){
         if(!error){
-          [[ProgramInformationInterface sharedManager] saveInstallationImage:data imageWrapper:imageInfo];
+          [[ProgramInformationInterface sharedManager]
+           saveInstallationImage:data imageWrapper:imageInfo];
 
         }else{
           NSLog(@"Error: %@", error.localizedDescription);
